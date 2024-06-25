@@ -1,0 +1,323 @@
+/********************/
+/*****0. GENERAL*****/
+/********************/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+
+    font-family: poppins;
+    scroll-behavior: smooth;
+}
+body{
+    background-color: black;
+}
+ul, nav{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+a.btn{
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgb(94, 0, 0);
+    opacity: 1;
+    border-radius: 50px;
+}
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 80px;
+}
+/*i think this should be general end*/
+.content-area{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+section h3.header-text{
+    text-transform: capitalize;
+    margin-bottom: 5px;
+    text-align: center;
+    font-size: 45px;
+    color: rgb(255, 255, 255);
+}
+section h3.header-text span{
+     color: rgb(94, 0, 0);
+}
+section p{
+    max-width: 775px;
+    line-height: 2;
+    padding: 0 2px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: black;
+}
+@media (max-width: 800px){
+    section{
+        padding: 50px 20px;
+    }
+    section h3.header-text{
+        font-size: 30px; 
+    }
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*****************/
+/****1. HEADER****/
+/*****************/
+header{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 100px 0;
+    animation: 1s animate 0.5s forwards;
+    opacity: 1;
+    column-rule: rgb(255, 255, 255);
+    z-index: 10;
+}
+header h2{
+    color: rgb(250, 250, 250);
+}
+header h2 a span{
+    color: rgb(255, 70, 70);
+}
+@keyframes animate{
+    100%{
+        opacity: 1;
+    }
+}
+
+header nav{
+    display: flex;
+    margin-right: -15px;
+} 
+header nav li a{
+    margin: 0 15px;
+    font-family: poppins;
+    color: white;
+    border-bottom: 1px solid orange;
+}
+@media (max-width: 800px){
+    header{
+        padding: 20px 50px;
+        flex-direction: column;
+    }
+    header h2{
+        margin-bottom: 15px;
+    }
+    header nav li{
+        margin: 0 7px;
+    }
+}
+
+/*****************/
+/****BANNER****/
+/*****************/
+.banner-area{
+    position: relative;
+    text-align: center;
+    min-height: 100vh;
+    color: white;
+}
+.banner-area .img-area{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 55%;
+    background-size: cover;
+    z-index: -1;
+    background-image: url(resouces/images/registwe-bg.jpg);
+    background-position:center;
+}
+
+.banner-area h1{
+    margin-bottom: 15px;
+    font-size: 65px;
+}
+
+.banner-area h1 span{
+    color: orange;
+}
+.banner-area h3{
+    margin-bottom: 40px;
+    font-size: 25px;
+}
+.banner-text .btn:hover{
+    background-color: orange;
+    color: rgb(94, 0, 0);
+    transition: 1s;
+}
+.banner-area a.btn{
+    padding: 15px 30px;
+    animation: ease-in-out;
+}
+.banner-text{
+    opacity: 0;
+    margin-top: 20px;
+    animation: 1s text-ani 1s forwards;
+}
+@keyframes text-ani{
+     100%{
+        opacity: 1;
+        margin: 0;
+     }
+}
+
+@media (max-width: 800px){
+    .banner-area{
+        min-height: 600px;
+    }
+    .banner-area h1{
+        font-size: 28px;;
+    }
+    .banner-area h3{
+        font-size: 24px;
+    }
+    .banner-area a.btn{
+        padding: 15px 40px; 
+    }
+}
+
+/**********/
+/***FORM***/
+/**********/
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.background{
+    width: 430px;
+    height: 520px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+}
+.background .shape{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    border-radius: 50%;
+}
+.shape:first-child{
+    background: linear-gradient(
+        #7a002f,
+        #d40101
+    );
+    left: -80px;
+    top: -80px;
+}
+.shape:last-child{
+    background: linear-gradient(
+        to right,
+        #ff512f,
+        #f09819
+    );
+    right: -30px;
+    bottom: -80px;
+}
+form{
+    height: 720px;
+    width: 400px;
+    background-color: rgba(255,255,255,0.13);
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    padding: 50px 35px;
+}
+form *{
+    font-family: 'Poppins',sans-serif;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+form h3{
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+}
+
+label{
+    display: block;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 500;
+}
+input{
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+}
+::placeholder{
+    color: #f8c565;
+}
+button{
+    margin-top: 50px;
+    width: 100%;
+    background-color: orange;
+    color: rgb(133, 6, 6);
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+ button:hover{
+    background-color: rgb(133, 6, 6);
+    transition: 0.5s;
+}
+.social{
+  margin-top: 30px;
+  display: flex;
+}
+.social div{
+  background: red;
+  width: 150px;
+  border-radius: 3px;
+  padding: 5px 10px 10px 5px;
+  background-color: rgba(255,255,255,0.27);
+  color: #eaf0fb;
+  text-align: center;
+}
+.social div:hover{
+  background-color: rgba(255,255,255,0.47);
+}
+.social .fb{
+  margin-left: 25px;
+}
+.social i{
+  margin-right: 4px;
+}
