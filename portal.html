@@ -1,0 +1,353 @@
+<html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block-Chain Academy Portal</title>
+    <link rel="icon" href="resouces/chain2.png">
+    <!-- <link rel="stylesheet" href="./Assets/css/bootstrap.css"> -->
+    <link rel="stylesheet" href="./Assets/css/portal.css">
+</head>
+
+<body>
+
+    <!-- ==========================-->
+    <!-- =======NAV SECTION======= -->
+    <ul class="Nav">
+        <li class="NavLi hideLi"><a href="index.html" class="NavLiA">Home</a></li>
+        <!-- nav search bar -->
+        <div class="input-wrapper NavLi">
+            <input placeholder="search.." class="input" id="searchInfo" name="text" type="text"
+                onkeyup="search_student()">
+        </div>
+        <!-- <li class="NavLi">
+            <a href="#" class="NavLiA">Sort-By</a>
+        </li> -->
+        <div class="dropdown">
+            <button class="dropbtn">More
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="#e8eaed" class="down">
+                    <path d="M480-360 280-560h400L480-360Z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="#e8eaed" class="up">
+                    <path d="m280-400 200-200 200 200H280Z" />
+                </svg>
+            </button>
+            <div class="dropdown-content">
+
+                <div class="select">
+
+                    <div class="selected" data-default="Sort-by" data-one="option-1" data-two="option-2"
+                        data-three="option-3">
+                        <!-- <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#e8eaed">
+                            <path
+                                d="m260-520 220-360 220 360H260ZM700-80q-75 0-127.5-52.5T520-260q0-75 52.5-127.5T700-440q75 0 127.5 52.5T880-260q0 75-52.5 127.5T700-80Zm-580-20v-320h320v320H120Zm580-60q42 0 71-29t29-71q0-42-29-71t-71-29q-42 0-71 29t-29 71q0 42 29 71t71 29Zm-500-20h160v-160H200v160Zm202-420h156l-78-126-78 126Zm78 0ZM360-340Zm340 80Z" />
+                        </svg> -->
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512" class="arrow">
+                            <path
+                                d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="options">
+                        <div title="Sort-By">
+                            <input id="all" name="option" type="radio" checked="" />
+                            <label class="option" for="all" data-txt="Sort-By"></label>
+                        </div>
+                        <div title="Alpha">
+                            <input type="radio" name="sort" value="Alpha" id="sortAlpha">
+                            <label for="sortAlpha" class="option">Alpha</label>
+                        </div>
+                        <div title="Admin-No">
+                            <input id="option-2" name="option" type="radio" />
+                            <label class="option" for="option-2">Admin-No</label>
+                        </div>
+                        <div title="Verified">
+                            <input id="option-3" name="option" type="radio" />
+                            <label class="option" for="option-3">Verified</label>
+                        </div>
+                        <div title="Pending">
+                            <input id="option-3" name="Pending" type="radio" />
+                            <label class="option" for="option-3">Pending</label>
+                        </div>
+                        <div title="New">
+                            <input id="option-3" name="New" type="radio" />
+                            <label class="option" for="option-3">New</label>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="scan">
+                    Facial Id
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="#e8eaed">
+                        <path
+                            d="M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-120v40h400v-40H280Zm0-640h400v-40H280v40Zm200 480q-54 0-105 15.5T280-260v20h400v-20q-44-29-95-44.5T480-320Zm0-80q54 0 104.5 12.5T680-352v-368H280v368q45-23 95.5-35.5T480-400Zm0-40q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35Zm0-80q-17 0-28.5-11.5T440-560q0-17 11.5-28.5T480-600q17 0 28.5 11.5T520-560q0 17-11.5 28.5T480-520Zm0 280h200-400 200Zm0-320Zm0-240Zm0 640Z" />
+                    </svg>
+                </a>
+                <a href="#" class="speechTxt">Speech
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="#e8eaed" class="speech">
+                        <path
+                            d="M80-80v-80q46 0 91-6t88-22q-46-23-72.5-66.5T160-349v-91h160v-120h135L324-822l72-36 131 262q20 40-3 78t-68 38h-56v40q0 33-23.5 56.5T320-360h-80v11q0 35 21.5 61.5T316-252l12 3q40 10 45 50t-31 60q-60 33-126.5 46T80-80Zm572-114-57-56q21-21 33-48.5t12-59.5q0-32-12-59.5T595-466l57-57q32 32 50 74.5t18 90.5q0 48-18 90t-50 74ZM765-80l-57-57q43-43 67.5-99.5T800-358q0-66-24.5-122T708-579l57-57q54 54 84.5 125T880-358q0 81-30.5 152.5T765-80Z" />
+                    </svg>
+                </a>
+            </div>
+            <div class="speecCancelCont">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff"
+                    class="cancelSpeech">
+                    <path
+                        d="m855-220-64-64q20-81-3-160t-83-138l56-58q55 54 87 126t32 156q0 36-6.5 71T855-220ZM532-541 398-676l-74-146 72-36 131 262q7 14 8 27.5t-3 27.5ZM80-80v-80q46 0 91-6t88-22q-46-23-72.5-66.5T160-349v-91h160v-120h81l80 80h-81v40q0 33-23.5 56.5T320-360h-80v11q0 35 21.5 61.5T316-252l12 3q40 10 45 50t-31 60q-60 33-126.5 46T80-80Zm740 53L28-820l56-56L876-84l-56 57Z" />
+                </svg>
+            </div>
+        </div>
+
+        <li class="NavLi hideLi">
+            <a href="register.html" class="NavLiA">Register</a>
+        </li>
+        <!-- html code for teacher side bar icon -->
+        <li class="NavLiHam" id="navHam">
+            <label class="hamburger">
+                <input type="checkbox" id="menu-toggle" />
+                <svg viewBox="0 0 32 32">
+                    <path class="line line-top-bottom"
+                        d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22">
+                    </path>
+                    <path class="line" d="M7 16 27 16"></path>
+                </svg>
+            </label>
+        </li>
+    </ul>
+    <!-- =================================-->
+    <!-- =======END OF NAV SECTION======= -->
+
+
+    <!-- SCANNER POP OUT CONTAINER -->
+    <div class="scanner-container">
+        <div class="scannerHead">
+            <h2>Scan UID</h2>
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"
+                class="closeScanner">
+                <path
+                    d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+            </svg>
+        </div>
+        <div class="scanner-frame" id="scannerFrame">
+            <video id="webcam" autoplay></video>
+        </div>
+
+        <button class="scan-button" id="scanButton">Scan</button>
+
+        <div class="status-message" id="statusMessage"></div>
+
+        <div class="user-info" id="userInfo" style="display: none;">
+            <p><strong>Name:</strong> <span id="scanner-name">John Doe</span></p>
+            <p><strong>UID:</strong> <span id="userId">12345678</span></p>
+        </div>
+    </div>
+    <!-- END OF SCANNER POP OUT CONTAINER -->
+
+
+
+    <div class="leaderBoardCont tableBody">
+        <p>Total Students</p>
+        <div class="leaderBoard">
+            <table class="table searchCont">
+                <thead>
+                    <tr class="searchItem">
+                        <th>User-Id</th>
+                        <th>Name</th>
+                        <th>Admin-No</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody class="searchs">
+                    <tr class="searchItem">
+                        <td>Blk9021</td>
+                        <td style="display: flex; align-items: center;">
+                            <img src="./resouces/images/team-2.jpg" alt="" class="profile-img">
+                            Drek Tony
+                        </td>
+                        <td>1101</td>
+                        <td data-label="Status" class="verifiedUser">
+                            Verified
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="#00ea00">
+                                <path
+                                    d="m344-60-76-128-144-32 14-148-98-112 98-112-14-148 144-32 76-128 136 58 136-58 76 128 144 32-14 148 98 112-98 112 14 148-144 32-76 128-136-58-136 58Zm34-102 102-44 104 44 56-96 110-26-10-112 74-84-74-86 10-112-110-24-58-96-102 44-104-44-56 96-110 24 10 112-74 86 74 84-10 114 110 24 58 96Zm102-318Zm-42 142 226-226-56-58-170 170-86-84-56 56 142 142Z" />
+                            </svg>
+                        </td>
+                    </tr>
+
+                    <tr class="searchItem">
+                        <td>Blk8902</td>
+                        <td style="display: flex; align-items: center;">
+                            <img src="./resouces/images/testimonial-4.jpg" alt="" class="profile-img">
+                            Awesome Prince
+                        </td>
+                        <td>9999</td>
+                        <td data-label="Status" class="verifiedUser">
+                            Verified
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px">
+                                <path
+                                    d="m344-60-76-128-144-32 14-148-98-112 98-112-14-148 144-32 76-128 136 58 136-58 76 128 144 32-14 148 98 112-98 112 14 148-144 32-76 128-136-58-136 58Zm34-102 102-44 104 44 56-96 110-26-10-112 74-84-74-86 10-112-110-24-58-96-102 44-104-44-56 96-110 24 10 112-74 86 74 84-10 114 110 24 58 96Zm102-318Zm-42 142 226-226-56-58-170 170-86-84-56 56 142 142Z" />
+                            </svg>
+                        </td>
+                    </tr>
+
+                    <tr class="searchItem">
+                        <td>Blk1394</td>
+                        <td style="display: flex;
+                            align-items: center;">
+                            <img src="./resouces/images/testimonial-2.jpg" alt="" class="profile-img">
+                            Uguwu Confidence
+                        </td>
+                        <td>Loading...</td>
+                        <td data-label="Status" class="processsingUser">
+                            Processing
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="grey">
+                                <path
+                                    d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q88 0 166.5 36T782-742L480-440v-360q-134 0-227 93t-93 227q0 134 93 227t227 93q69 0 132-28.5T720-270v110q-53 38-114 59T480-80Zm320-160v-320h80v320h-80Zm40 160q-17 0-28.5-11.5T800-120q0-17 11.5-28.5T840-160q17 0 28.5 11.5T880-120q0 17-11.5 28.5T840-80Z" />
+                            </svg>
+                        </td>
+
+                    </tr>
+
+
+                    <tr class="searchItem">
+
+                        <td>Blk7310</td>
+                        <td style="display: flex;
+                            align-items: center;">
+                            <img src="./resouces/images/team-1.jpg" alt="" class="profile-img">
+                            Favour Bright
+                        </td>
+                        <td>9872</td>
+                        <td data-label="Status" class="alumni">
+                            Alumni
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="orange">
+                                <path
+                                    d="M280-880h400v314q0 23-10 41t-28 29l-142 84 28 92h152l-124 88 48 152-124-94-124 94 48-152-124-88h152l28-92-142-84q-18-11-28-29t-10-41v-314Zm80 80v234l80 48v-282h-80Zm240 0h-80v282l80-48v-234ZM480-647Zm-40-12Zm80 0Z" />
+                            </svg>
+                        </td>
+
+                    </tr>
+
+
+                    <tr class="searchItem">
+
+                        <td>Blk6711</td>
+                        <td style="display: flex;
+                            align-items: center;">
+                            <img src="./resouces/images/graduant-2.jpg" alt="" class="profile-img">
+                            Anthony Madubuike
+                        </td>
+                        <td>7214</td>
+                        <td data-label="Status" class="verifiedUser">
+                            Verified
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="#00ea00">
+                                <path
+                                    d="m344-60-76-128-144-32 14-148-98-112 98-112-14-148 144-32 76-128 136 58 136-58 76 128 144 32-14 148 98 112-98 112 14 148-144 32-76 128-136-58-136 58Zm34-102 102-44 104 44 56-96 110-26-10-112 74-84-74-86 10-112-110-24-58-96-102 44-104-44-56 96-110 24 10 112-74 86 74 84-10 114 110 24 58 96Zm102-318Zm-42 142 226-226-56-58-170 170-86-84-56 56 142 142Z" />
+                            </svg>
+                        </td>
+
+                    </tr>
+
+                    <tr class="searchItem">
+
+                        <td>Blk1045</td>
+                        <td style="display: flex;
+                            align-items: center;">
+                            <img src="./resouces/images/team-3.jpg" alt="" class="profile-img">
+                            Kerin Hermanie
+                        </td>
+                        <td>5321</td>
+                        <td data-label="Status" class="verifiedUser">
+                            Verified
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="#00ea00">
+                                <path
+                                    d="m344-60-76-128-144-32 14-148-98-112 98-112-14-148 144-32 76-128 136 58 136-58 76 128 144 32-14 148 98 112-98 112 14 148-144 32-76 128-136-58-136 58Zm34-102 102-44 104 44 56-96 110-26-10-112 74-84-74-86 10-112-110-24-58-96-102 44-104-44-56 96-110 24 10 112-74 86 74 84-10 114 110 24 58 96Zm102-318Zm-42 142 226-226-56-58-170 170-86-84-56 56 142 142Z" />
+                            </svg>
+                        </td>
+
+                    </tr>
+
+                    <tr class="searchItem">
+
+                        <td>Blk5890</td>
+                        <td style="display: flex;
+                            align-items: center;">
+                            <img src="./resouces/images/teacher1.jpg" alt="" class="profile-img">
+                            Joshua Efe
+                        </td>
+                        <td>8923</td>
+                        <td data-label="Status" class="alumni">
+                            Alumni
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="orange">
+                                <path
+                                    d="M280-880h400v314q0 23-10 41t-28 29l-142 84 28 92h152l-124 88 48 152-124-94-124 94 48-152-124-88h152l28-92-142-84q-18-11-28-29t-10-41v-314Zm80 80v234l80 48v-282h-80Zm240 0h-80v282l80-48v-234ZM480-647Zm-40-12Zm80 0Z" />
+                            </svg>
+                        </td>
+                        </td>
+
+                    </tr>
+
+                    <tr class="searchItem">
+
+                        <td>Blk8290</td>
+                        <td style="display: flex;
+                            align-items: center;">
+                            <img src="./resouces/images/teacher1.jpg" alt="" class="profile-img">
+                            Caleb Musa
+                        </td>
+                        <td>8923</td>
+                        <td data-label="Status" class="processsingUser">
+                            Processing
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="grey">
+                                <path
+                                    d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q88 0 166.5 36T782-742L480-440v-360q-134 0-227 93t-93 227q0 134 93 227t227 93q69 0 132-28.5T720-270v110q-53 38-114 59T480-80Zm320-160v-320h80v320h-80Zm40 160q-17 0-28.5-11.5T800-120q0-17 11.5-28.5T840-160q17 0 28.5 11.5T880-120q0 17-11.5 28.5T840-80Z" />
+                            </svg>
+                        </td>
+
+                    </tr>
+
+                    <tr class="searchItem">
+
+                        <td>Blk1323</td>
+                        <td style="display: flex;
+                            align-items: center;">
+                            <img src="./resouces/images/graduant.jpg" alt="" class="profile-img">
+                            James Sofia
+                        </td>
+                        <td>8923</td>
+                        <td data-label="Status" class="verifiedUser">
+                            Verified
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="#00ea00">
+                                <path
+                                    d="m344-60-76-128-144-32 14-148-98-112 98-112-14-148 144-32 76-128 136 58 136-58 76 128 144 32-14 148 98 112-98 112 14 148-144 32-76 128-136-58-136 58Zm34-102 102-44 104 44 56-96 110-26-10-112 74-84-74-86 10-112-110-24-58-96-102 44-104-44-56 96-110 24 10 112-74 86 74 84-10 114 110 24 58 96Zm102-318Zm-42 142 226-226-56-58-170 170-86-84-56 56 142 142Z" />
+                            </svg>
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</body>
+<script src="./Assets/js/portal.js"></script>
+
+</html>
+
+</html>

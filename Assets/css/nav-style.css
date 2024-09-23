@@ -116,7 +116,7 @@ body {
     overflow-x: hidden;
     transition: width 0.5s;
     padding-top: 60px;
-    z-index: 999;
+    z-index:1;
 }
 
 .sidebar .teacherNavHam a {

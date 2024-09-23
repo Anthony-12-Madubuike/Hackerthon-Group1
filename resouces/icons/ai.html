@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Sidebar</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .sidebar {
+      width: 250px;
+      height: 100%;
+      background-color: #333;
+      position: fixed;
+      left: -250px; /* Hidden by default */
+      top: 0;
+      transition: left 0.3s ease;
+    }
+
+    .sidebar-list {
+      list-style: none;
+      padding: 20px;
+    }
+
+    .sidebar-list li {
+      margin-bottom: 15px;
+    }
+
+    .sidebar-list li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      display: block;
+      padding: 10px;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+
+    .sidebar-list li a:hover {
+      background-color: #575757;
+    }
+
+    .close-btn {
+      background-color: red;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 24px;
+      padding: 10px;
+      margin: 20px;
+    }
+
+    .content {
+      flex: 1;
+      padding: 20px;
+      transition: margin-left 0.3s ease;
+    }
+
+    .menu-btn {
+      font-size: 24px;
+      padding: 10px 20px;
+      background-color: #333;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .menu-btn:hover {
+      background-color: #444;
+    }
+
+    .sidebar.open {
+      left: 0; /* Make the sidebar visible */
+    }
+
+    .content.shifted {
+      margin-left: 250px; /* Move the content when sidebar is visible */
+    }
+  </style>
+</head>
+<body>
+  <nav class="sidebar" id="sidebar">
+    <ul class="sidebar-list">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">News</a></li>
+      <li><a href="#">Library</a></li>
+      <li><a href="#">Portals</a></li>
+      <li><a href="#">Register</a></li>
+    </ul>
+    <button class="close-btn" onclick="toggleSidebar()">&#10005;</button>
+  </nav>
+
+  <div class="content" id="content">
+    <button class="menu-btn" onclick="toggleSidebar()">☰ Open Sidebar</button>
+    <h1>Welcome to the Sidebar Demo</h1>
+    <p>Content goes here.</p>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      const content = document.getElementById('content');
+
+      // Toggle sidebar visibility
+      sidebar.classList.toggle('open');
+      
+      // Shift content to accommodate the sidebar
+      content.classList.toggle('shifted');
+    }
+  </script>
+</body>
+</html>

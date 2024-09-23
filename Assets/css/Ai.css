@@ -1,0 +1,240 @@
+.chat-container {
+    background: linear-gradient(to bottom, rgb(12, 0, 85), #010c34);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'aiHead aiHead aiHead aiHead'
+    'aiBody aiBody aiBody aiBody';
+    /* grid-template-rows: 0fr 1fr; */
+    /* gap: 100px; */
+    width: 50px;
+    height: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: white;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.chat-container.fullscreen {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 0;
+
+}
+
+.chat-header {
+    background:linear-gradient(3000deg, rgb(9, 1, 72), rgb(58, 0, 128));
+    grid-area: aiHead;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* cursor: pointer; */
+}
+
+.chat-header h3 {
+    margin: 0;
+}
+
+#toggle-button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    
+}
+
+.chat-window {
+    background:linear-gradient(3000deg, rgb(19, 18, 20), rgb(0, 12, 96));
+    grid-area: aiBody;
+
+    padding: 10px;  
+    display: flex;
+    flex-direction: column;
+    transition: height 0.3s ease;
+}
+
+.chat-window.minimized {
+    display: none;
+}
+
+.chat-content {
+    display: grid;
+    box-shadow: 0 10px 8px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 2px 5px 20px 4px #029aff; */
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr;
+    align-items: center;
+    gap: 20px;
+    flex-grow: 1;
+    overflow-y: scroll;
+    padding: 10px;
+    height: 450px;
+    background:linear-gradient(3000deg, rgb(9, 1, 72), rgb(58, 0, 128));
+
+    border-bottom: 1px solid #ddd;
+
+}
+
+.chat-content p{
+    background-color: #007bff;
+    padding: 15px;
+    width: 50vw;
+    box-shadow: 0px 8px 5px rgba(30, 29, 29, 0.3);
+    color: #fff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    animation: fade-in 2s ease-in-out forwards;
+    opacity: 1;
+
+
+
+
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100%{
+        transform: translateY(5%) translateY(-5%);
+  
+
+    }
+    40%{
+        transform: translateY(-5px) translateY(-5%);
+     
+    }
+    60%{
+        transform: translateY(-5px) translateY(-5%);
+     
+
+    }
+   
+}
+ .bi-robot{
+ animation: bounce 1.2s infinite;  
+
+}
+ .bi-robot:hover{
+    fill: purple;
+}
+@keyframes fade-in{
+    from{
+        opacity: 0;
+        /* background-color: rgb(0, 0, 0); */
+        transform:translateX(0%);
+    background-color: #007bff22;
+
+
+    }
+    to{
+        opacity: 1;
+    /* background-color: rgb(3, 3, 20); */
+    transform:translateX(5%) ;
+    /* background-color: #007bff; */
+
+
+    }
+}
+.user-input[type="text"] {
+    margin: 50%;
+    /* border: 1px solid #ddd; */
+    color: white;
+    border-radius: 5px;
+    margin-top: 10px;
+    height: 100px;
+    width: 100%;
+}
+
+
+#send-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+}
+
+
+.sendMessage {
+    /* grid-area: sendBtn; */
+    font-family: inherit;
+    font-size: 16px;
+    background: rgb(3, 44, 167);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.sendMessage span {
+    display: block;
+    margin-left: 0.3em;
+    transition: all 0.3s ease-in-out;
+}
+
+.sendMessage svg {
+    display: block;
+    width: 1rem;
+    transform-origin: center center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.sendMessage:hover .svg-wrapper {
+    animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+.sendMessage:hover svg {
+    transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+
+.sendMessage:hover span {
+    transform: translateX(5em);
+}
+
+.sendMessage:active {
+    transform: scale(0.95);
+}
+
+
+
+
+@keyframes fly-1 {
+    from {
+        transform: translateY(0.1em);
+    }
+
+    to {
+        transform: translateY(-0.1em);
+    }
+}
+
+
+
+
+
+@media (min-width:528px) {
+    .chat-content p{
+        width: 30vw;
+    }
+}
+@media (max-width:528px) {
+    p{
+        font-size: 10px;
+    }
+}

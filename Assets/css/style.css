@@ -2,6 +2,10 @@
 /********************/
 /*****0. GENERAL*****/
 /********************/
+
+
+
+
 *{
     margin: 0;
     padding: 0;
@@ -66,7 +70,7 @@ section p{
         font-size: 30px; 
     }
 }
-button {
+.newsSubmit {
     margin-top: 20px;
     text-decoration: none;
     position: relative;
@@ -85,7 +89,7 @@ button {
     z-index: 1;
   }
   
-  button:hover {
+  .newsSubmit:hover {
     animation: ani 8s linear infinite;
     border: none;
   }
@@ -100,7 +104,7 @@ button {
     }
   }
   
-  button:before {
+  .newsSubmit:before {
     content: "";
     position: absolute;
     top: -5px;
@@ -114,17 +118,17 @@ button {
     transition: 1s;
   }
   
-  button:hover::before {
+  .newsSubmit:hover::before {
     filter: blur(20px);
   }
   
-  button:active {
+  .newsSubmit:active {
     background: linear-gradient(32deg, #d81e06, orange, #ffeb3b, gold);
   }
 
 
 
-  button {
+  .newsSubmit {
     text-decoration: none;
     position: relative;
     border: none;
@@ -142,7 +146,7 @@ button {
     z-index: 1;
   }
   
-  button:hover {
+  .newsSubmit:hover {
     animation: ani 8s linear infinite;
     border: none;
   }
@@ -157,7 +161,7 @@ button {
     }
   }
   
-  button:before {
+  .newsSubmit:before {
     content: "";
     position: absolute;
     top: -5px;
@@ -171,11 +175,11 @@ button {
     transition: 1s;
   }
   
-  button:hover::before {
+  .newsSubmit:hover::before {
     filter: blur(20px);
   }
   
-  button:active {
+  .newsSubmit:active {
     background: linear-gradient(32deg, #d81e06, orange, #ffeb3b, gold);
   }
 /****************/
@@ -239,11 +243,11 @@ header nav li a{
     color: white;
     border-bottom: 1px solid orange;
 }
-/*header nav li a:hover{
+/* header nav li a:hover{
     transition: 1s;
     color: rgb(255, 246, 196);
     border-bottom: 0.5px solid orange;
-}*/
+} */
 
 
 @media (max-width: 800px){
@@ -269,6 +273,7 @@ header nav li a{
     text-align: center;
     min-height: 100vh;
     color: white;
+    z-index: -1;
 }
 .banner-area .img-area::before{
     content: '';
@@ -330,6 +335,14 @@ header nav li a{
         opacity: 1;
         margin: 0;
      }
+}
+
+.learnMoreBtn{
+  padding: 12px;
+  border: solid orange;
+  background: transparent;
+  color: white;
+  border-radius: 30px;
 }
 
 @media (max-width: 800px){
@@ -445,10 +458,11 @@ p.socials a{
     }
 }
 /**********************/
-/**-alumi**/
+/**-alumni**/
 /**********************/
 .management{
     background-color: rgba(0, 0,0,0.3);
+    z-index: -1;
 }
 .man-info{
     max-width: 775px;
@@ -470,6 +484,7 @@ p.socials a{
     align-items: center;
     flex-wrap: wrap;
 }
+
 .box{
     width: 300px;
     height: 400px;
@@ -480,6 +495,7 @@ p.socials a{
     cursor: pointer;
     margin: 10px 5px;
 }
+
 .box img{
     width: 105%;
     height: 105%;

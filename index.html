@@ -5,54 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Block-Chain Academy</title>
     <link rel="icon" href="resouces/chain2.png">
-    <link rel="stylesheet" href="fontawesome-all.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="nav-style.css">
-    <link rel="stylesheet" href="nav-main.css">
+    <link rel="stylesheet" href="./Assets/css/fontawesome-all.css">
+    <link rel="stylesheet" href="./Assets/css/style.css">
+    <link rel="stylesheet" href="./Assets/css/nav-style.css">
+    <link rel="stylesheet" href="./Assets/css/nav-main.css">
 
 </head>
 
 <body>
     <div class="scroll-watcher"></div>
 
-    <nav>
-        <ul class="sidebar">
-            <li class="hide" onclick=hideSidebar()><a href="#"><img src="resouces/icons/left-black-arrow.png" alt="ll"></a></li>
+    <nav class="nav">
+        <a href="#" class="txt">Block-Chain Academy</a>
+        <ul class="navCont">
+            <li><a href="#" class="hideOnMobile">News</a></li>
+            <li><a href="portal.html" class="hideOnMobile">Portals</a></li>
+            <li><a href="#" class="hideOnMobile">Contact</a></li>
+            <li><a href="register.html" class="hideOnMobile">Register</a></li>
+            <button class="menu-btn" onclick="toggleSidebar()"><svg xmlns="http://www.w3.org/2000/svg" width="30"
+                    height="30" fill="#575757" class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                </svg>
+            </button>
+        </ul>
+    </nav>
+    <nav class="sidebar" id="sidebar">
+        <ul class="sidebar-list">
             <li><a href="#">News</a></li>
             <li><a href="#">Library</a></li>
-            <li><a href="#">Portals</a></li>
+            <li><a href="portal.html">Portals</a></li>
             <li><a href="#">Contact</a></li>
             <li><a href="register.html">Register</a></li>
         </ul>
-
-        <ul>
-            <li><a href="#" class="txt">Block-Chain Academy</a></li>
-            <li class="logo"><a href="#"><img src="resouces/icons/right-black-arrow.png" alt="ll"></a></li>
-            <li><a href="#" class="hideOnMobile">News</a></li>
-            <li><a href="#" class="hideOnMobile">Library</a></li>
-            <li><a href="#" class="hideOnMobile">Portals</a></li>
-            <li><a href="#" class="hideOnMobile">Contact</a></li>
-            <li><a href="register.html" class="hideOnMobile">Register</a></li>
-            <li class="menu-btn" onclick=showSidebar()><a href="#"><img src="resouces/icons/icons8-menu-50.png" alt="ll"></a></li>
-        </ul>
+        <button class="close-btn" onclick="toggleSidebar()"><img src="resouces/icons/left-black-arrow.png"
+                alt="ll"></button>
     </nav>
 
     <!--Header End!-->
 
-    <section class="banner-area">
+    <section class="banner-area content" id="content">
         <div class="img-area"></div>
         <div class="banner-text">
             <h5>Elementary Academy and Institution of Technology</h5>
             <h1>Block-Chain <span>Academy</span></h1>
             <h3>Investing in the next Innovators</h3>
             <!--<a href="#" class="btn">Learn More</a>-->
-            <a href="#"> <button>Learn More</button></a>
+            <button class="learnMoreBtn">Learn More</button>
         </div>
     </section>
 
 
     <!--Form-->
-  
+
 
     <section class="info-area">
         <h3 class="header-text">Block-Chain <span>Academy</span></h3>
@@ -81,7 +86,7 @@
         <h3 class="header-text">Student <span>Services</span></h3>
         <p>Our college provides tutelage for...</p>
 
-        <div class="content-area" >
+        <div class="content-area">
             <div class="single-service" data-aos="fade-up">
                 <div class="icon-area">
                     <img src="resouces/icons/laptop_mac_24dp_FILL0_wght400_GRAD0_opsz24.png" alt="">
@@ -171,7 +176,9 @@
                 </div>
             </div>
         </div>
-        <a href="#"> <button>Start Today</button></a>
+        <button
+            style="padding:15px; background:rgb(46, 2, 2); color:white; border:solid white; border-radius:40px;">Start
+            Today</button>
 
 
     </section>
@@ -202,7 +209,7 @@
 
         </ul> -->
 
-        <div class="" data-aos="fade-in">djifjjfj</div>
+
         <div class="gallery">
             <img src="./resouces//images/lego1.jpg" alt="">
             <img src="./resouces//images/bio2.jpg" alt="">
@@ -211,22 +218,16 @@
             <img src="./resouces//images/chart2.jpg" alt="">
             <img src="./resouces//images/carousel-1.jpg" alt="">
             <img src="./resouces//images/carousel-2.jpg" alt="">
-    
-    
+
+
         </div>
-        <a href="#"> <button>Join Us</button></a>
     </section>
-    <!--Register-->
-
-
-    <script src="index.js"></script>
-    <!--Register End-->
 
     <section class="newsletter">
         <h3 class="header-text">Get our newsletter</h3>
         <form action="">
             <input type="email" name="email" id="email" placeholder="Email..." required>
-            <a href="#"> <button>Drop your email</button></a>
+            <button class="newsSubmit">Drop your email</button>
 
         </form>
     </section>
@@ -246,7 +247,7 @@
     </section>
 
     <footer>
-        <p>All rights reserved by  <a href="#">Team Chain Titans</a></p>
+        <p>All rights reserved by <a href="#">Team Chain Titans</a></p>
         <p>Madubuike Anthony, Otokpa Joseph, Joseph Majesty</p>
         <ul class="example-2">
             <li class="icon-content">
@@ -300,16 +301,18 @@
         </ul>
 
     </footer>
-    
-    <script src="anime.js"></script>
+    <!-- <script src="./packages/isotope/isotope.pkgd.min.js"></script> -->
+    <!-- <script src="anime.js"></script> -->
     <script>
-        function showSidebar(){
-            const sidebar = document.querySelector('.sidebar')
-            sidebar.style.display = 'flex'
-        }
-        function hideSidebar(){
-            const sidebar = document.querySelector('.sidebar')
-            sidebar.style.display = 'none'
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const content = document.getElementById('content');
+
+            // Toggle sidebar visibility
+            sidebar.classList.toggle('open');
+
+            // Shift content to accommodate the sidebar
+            content.classList.toggle('shifted');
         }
     </script>
 </body>

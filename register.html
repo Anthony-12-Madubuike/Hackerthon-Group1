@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ongoing Registeration...</title>
-  <link rel="stylesheet" href="nav-style.css" />
+  <link rel="stylesheet" href="./Assets/css/nav-style.css">
 </head>
 
 <body>
@@ -76,14 +76,24 @@
           </div>
 
           <div class="input-box">
+            <label class="details" for="email">Email</label>
+            <input type="email" id="email" placeholder="example@gmail.com" name="email" required>
+          </div>
+
+          <div class="input-box">
+            <label class="details" for="fullname">Password</label>
+            <input type="password" placeholder="Enter your password" name="password" id="password" required>
+          </div>
+
+          <div class="input-box">
             <label class="details" for="age">Age</label>
             <input type="text" id="age" pattern="[0-9]*" inputmode="numeric"
               oninput="this.value =this.value.replace(/[^0-9]/g, '')" placeholder="Enter your age" name="age" required>
           </div>
 
           <div class="input-box">
-            <label class="details" for="email">Email</label>
-            <input type="email" id="email" placeholder="example@gmail.com" name="email" required>
+            <label class="details" for="gender">Gender</label>
+            <input type="text" id="gender" placeholder="Enter your gender" name="gender" required>
           </div>
 
           <div class="input-box">
@@ -91,21 +101,17 @@
             <input type="proffession" id="proffession" placeholder="Enter your proffession" name="profession" required>
           </div>
 
-          <div class="input-box">
-            <label class="details" for="gender">Gender</label>
-            <input type="text" id="gender" placeholder="Enter your gender" name="gender" required>
-          </div>
+
           <div class="input-box">
             <label class="details" for="address">Address</label>
             <input type="text" id="address" placeholder="Enter your address" name="address">
           </div>
         </div>
 
-        
+
 
         <div class="button">
-          <button type="submit"
-            style="color: orange; 
+          <button type="submit" style="color: orange; 
             background:white; 
             width:100%; 
             height:100%;
@@ -117,34 +123,80 @@
       </form>
     </div>
   </div>
-  <script src="index.js"></script>
+
+  <!-- <script src="index.js"></script> -->
   <script>
-    document.getElementById('registerForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent the form from submitting the traditional way
-  
-        // Get form data
-        let fullName = document.getElementById('fullname').value;
-        let telno = document.getElementById('telno').value;
-        let email = document.getElementById('email').value; 
-        let age = document.getElementById('age').value; 
-        let address = document.getElementById('address').value; 
-        let proffession = document.getElementById('proffession').value; 
+
+    document.getElementById('registerForm').addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent the form from submitting
+
+      // Get form data
+      let fullName = document.getElementById('fullname').value;
+      let telno = document.getElementById('telno').value;
+      let email = document.getElementById('email').value;
+      let age = document.getElementById('age').value;
+      let address = document.getElementById('address').value;
+      let proffession = document.getElementById('proffession').value;
+      // Generating of user Id
+      let adminNo = Math.floor(Math.random() * 10000)
 
 
-  
-        // Save data to localStorage
-        localStorage.setItem('fullname', fullName);
-        localStorage.setItem('email', email);
-        localStorage.setItem('telno', telno);
-        localStorage.setItem('age', age);
-        localStorage.setItem('address', address);
-        localStorage.setItem('proffession', proffession);
-  
-        // Redirect to new page
-        window.location.href = 'profile.html';
+
+      // Save data to localStorage
+      localStorage.setItem('adminNo', adminNo)
+      localStorage.setItem('fullname', fullName);
+      localStorage.setItem('email', email);
+      localStorage.setItem('telno', telno);
+      localStorage.setItem('age', age);
+      localStorage.setItem('address', address);
+      localStorage.setItem('proffession', proffession);
+
+
+      // Check if the browser supports notifications
+       // Request Notification Permission if needed
+       if (Notification.permission === 'granted') {
+        sendNotification(adminNo);
+    } else if (Notification.permission === 'default' || Notification.permission === 'denied') {
+        // Ask for permission to send notifications
+        Notification.requestPermission().then(permission => {
+            if (permission === 'granted') {
+                sendNotification(adminNo);
+
+            } else {
+                alert("Notification permission denied.");
+            }
+        });
+    } else {
+        alert("Notifications are blocked.");
+    }
+
+    // Redirect after 3 seconds
+    setTimeout(() => {
+        window.location.href = 'signup.html';
+    }, 9000); // 3 second delay
+      // Redirect to new page
+      window.location.href = 'signup.html';
     });
-  </script>
+    // Function to display the notification
+    
+// Function to send the notification
+function sendNotification(adminNo) {
   
+  let fullName = document.getElementById('fullname').value;
+  new Notification('Blockchain Academy', {
+      body: `Dear ${fullName} you've completed your registration into Blockchain Academy. Please do well to Signin into your dashboard`,
+      
+  });
+
+    new Notification('Blockchain Academy', {
+      body: 'Your Admin no is: ' + adminNo,
+      //icon: 'success-icon.png' // You can add a custom icon if available
+  }); 
+
+ 
+}
+  </script>
+
 </body>
 
 </html>

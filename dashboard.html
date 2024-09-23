@@ -1,0 +1,711 @@
+<html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="icon" href="resouces/chain2.png">
+    <link rel="stylesheet" href="./Assets/css/dashboard.css">
+    <link rel="stylesheet" href="./Assets/css/Ai.css">
+</head>
+
+<body>
+    <!-- ============================================= -->
+    <!-- =======PERSONAL ASSISTANCE SECTION(AI)======= -->
+    <div class="chat-container" id="chat-container">
+        <div class="chat-header" id="chat-header">
+            <!-- P.A ICON -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" fill="orange" id="aiIcon"
+                class="bi bi-robot" viewBox="0 0 16 16" style="display: none;">
+                <path
+                    d="M6 12.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5ZM3 8.062C3 6.76 4.235 5.765 5.53 5.886a26.58 26.58 0 0 0 4.94 0C11.765 5.765 13 6.76 13 8.062v1.157a.933.933 0 0 1-.765.935c-.845.147-2.34.346-4.235.346-1.895 0-3.39-.2-4.235-.346A.933.933 0 0 1 3 9.219V8.062Zm4.542-.827a.25.25 0 0 0-.217.068l-.92.9a24.767 24.767 0 0 1-1.871-.183.25.25 0 0 0-.068.495c.55.076 1.232.149 2.02.193a.25.25 0 0 0 .189-.071l.754-.736.847 1.71a.25.25 0 0 0 .404.062l.932-.97a25.286 25.286 0 0 0 1.922-.188.25.25 0 0 0-.068-.495c-.538.074-1.207.145-1.98.189a.25.25 0 0 0-.166.076l-.754.785-.842-1.7a.25.25 0 0 0-.182-.135Z" />
+                <path
+                    d="M8.5 1.866a1 1 0 1 0-1 0V3h-2A4.5 4.5 0 0 0 1 7.5V8a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1v1a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-1a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1v-.5A4.5 4.5 0 0 0 10.5 3h-2V1.866ZM14 7.5V13a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7.5A3.5 3.5 0 0 1 5.5 4h5A3.5 3.5 0 0 1 14 7.5Z" />
+            </svg>
+            <p id="bannerText" style="display: none; justify-self:center">Personal Assistance</p>
+
+            <button id="toggle-button" class="toggle-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" fill="orange" id="aiIcon"
+                    class="bi bi-robot" viewBox="0 0 16 16">
+                    <path
+                        d="M6 12.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5ZM3 8.062C3 6.76 4.235 5.765 5.53 5.886a26.58 26.58 0 0 0 4.94 0C11.765 5.765 13 6.76 13 8.062v1.157a.933.933 0 0 1-.765.935c-.845.147-2.34.346-4.235.346-1.895 0-3.39-.2-4.235-.346A.933.933 0 0 1 3 9.219V8.062Zm4.542-.827a.25.25 0 0 0-.217.068l-.92.9a24.767 24.767 0 0 1-1.871-.183.25.25 0 0 0-.068.495c.55.076 1.232.149 2.02.193a.25.25 0 0 0 .189-.071l.754-.736.847 1.71a.25.25 0 0 0 .404.062l.932-.97a25.286 25.286 0 0 0 1.922-.188.25.25 0 0 0-.068-.495c-.538.074-1.207.145-1.98.189a.25.25 0 0 0-.166.076l-.754.785-.842-1.7a.25.25 0 0 0-.182-.135Z" />
+                    <path
+                        d="M8.5 1.866a1 1 0 1 0-1 0V3h-2A4.5 4.5 0 0 0 1 7.5V8a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1v1a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-1a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1v-.5A4.5 4.5 0 0 0 10.5 3h-2V1.866ZM14 7.5V13a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7.5A3.5 3.5 0 0 1 5.5 4h5A3.5 3.5 0 0 1 14 7.5Z" />
+                </svg>
+            </button>
+        </div>
+        <div id="chat-window" class="chat-window minimized">
+            <div class="chat-content">
+                <p class="bot-message" id="bot-message">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" fill="orange" id="aiIcon"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M6 12.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5ZM3 8.062C3 6.76 4.235 5.765 5.53 5.886a26.58 26.58 0 0 0 4.94 0C11.765 5.765 13 6.76 13 8.062v1.157a.933.933 0 0 1-.765.935c-.845.147-2.34.346-4.235.346-1.895 0-3.39-.2-4.235-.346A.933.933 0 0 1 3 9.219V8.062Zm4.542-.827a.25.25 0 0 0-.217.068l-.92.9a24.767 24.767 0 0 1-1.871-.183.25.25 0 0 0-.068.495c.55.076 1.232.149 2.02.193a.25.25 0 0 0 .189-.071l.754-.736.847 1.71a.25.25 0 0 0 .404.062l.932-.97a25.286 25.286 0 0 0 1.922-.188.25.25 0 0 0-.068-.495c-.538.074-1.207.145-1.98.189a.25.25 0 0 0-.166.076l-.754.785-.842-1.7a.25.25 0 0 0-.182-.135Z" />
+                        <path
+                            d="M8.5 1.866a1 1 0 1 0-1 0V3h-2A4.5 4.5 0 0 0 1 7.5V8a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1v1a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-1a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1v-.5A4.5 4.5 0 0 0 10.5 3h-2V1.866ZM14 7.5V13a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7.5A3.5 3.5 0 0 1 5.5 4h5A3.5 3.5 0 0 1 14 7.5Z" />
+                    </svg>
+                    Hi! How can I assist you today?
+                </p>
+            </div>
+            <input type="text" id="user-input" placeholder="Ask a question..."
+                style="padding: 0.7%; background-color:rgb(255, 255, 255);border:none;color:#060101; outline:none; border-radius: 5px;">
+
+            <button class="sendMessage" id="send-button">
+                <div class="svg-wrapper-1">
+                    <div class="svg-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15">
+                            <path fill="none" d="M0 0h24v24H0z"></path>
+                            <path fill="currentColor"
+                                d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z">
+                            </path>
+                        </svg>
+                    </div>
+                </div>
+                <span>Send</span>
+            </button>
+        </div>
+    </div>
+
+
+    <!-- ==================================================== -->
+    <!-- =======END OF PERSONAL ASSISTANCE SECTION(AI)======= -->
+
+
+    <!-- ===========================
+        ========NAV SECTION======= -->
+    <div class="navSection">
+        <label class="hamburger">
+            <input type="checkbox" id="menu-toggle" />
+            <svg viewBox="0 0 32 32">
+                <path class="line line-top-bottom"
+                    d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22">
+                </path>
+                <path class="line" d="M7 16 27 16" fill="#f9f9f9f9"></path>
+            </svg>
+        </label>
+        <!-- NAV SEARCH BAR -->
+        <input type="text" placeholder="search" class="search">
+
+        <!-- NAV NOTIFY ICON -->
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="white"
+            class="notify" id="notify" data-step="1" data-guide="check out yor notifications here!">
+            <path
+                d="M160-200v-80h80v-280q0-83 50-147.5T420-792v-28q0-25 17.5-42.5T480-880q25 0 42.5 17.5T540-820v28q80 20 130 84.5T720-560v280h80v80H160Zm320-300Zm0 420q-33 0-56.5-23.5T400-160h160q0 33-23.5 56.5T480-80ZM320-280h320v-280q0-66-47-113t-113-47q-66 0-113 47t-47 113v280Z" />
+        </svg>
+
+        <!-- NAV NOTIFICATION TOOTIP -->
+        <div id="notifyTooltip" class="notifyTooltip">
+
+            <div class="notifyTooltipHead">
+                <p>Notifications</p>
+                <div class="notifyTooltipLinks">
+                    <a href="">mark as read</a>
+                    <a href="">clear all</a>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="white">
+                        <path
+                            d="M480-160q-33 0-56.5-23.5T400-240q0-33 23.5-56.5T480-320q33 0 56.5 23.5T560-240q0 33-23.5 56.5T480-160Zm0-240q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm0-240q-33 0-56.5-23.5T400-720q0-33 23.5-56.5T480-800q33 0 56.5 23.5T560-720q0 33-23.5 56.5T480-640Z" />
+                    </svg>
+                </div>
+            </div>
+            <div class="notifyTooltipBody">
+                <div class="notifyTooltipBodyCont">
+                    <img src="./resouces/images/team-2.jpg" alt="">
+                    <p class="notifyName">Anthony Madubuike</p>
+                    <p class="notifyMessage">Currently login</p>
+                    <div class="notifyTimeCont">
+                        <p class="notifytime" style="font-size: 12px;">1min</p>
+                        <img src="./resouces/icons/time.svg" alt="" width="1px" height="15px">
+
+                    </div>
+                </div>
+
+                <div class="notifyTooltipBodyCont">
+                    <img src="./resouces/images/graduant-3.jpg" alt="">
+                    <p class="notifyName">Favour Bright</p>
+                    <p class="notifyMessage">Favour Bright message you</p>
+                    <div class="notifyTimeCont">
+                        <p class="notifytime" style="font-size: 12px;">10min</p>
+                        <img src="./resouces/icons/time.svg" alt="" width="1px" height="15px">
+
+                    </div>
+                </div>
+
+                <div class="notifyTooltipBodyCont">
+                    <img src="./resouces/images/team-1.jpg" alt="">
+                    <p class="notifyName">Ugwu Confidence</p>
+                    <p class="notifyMessage">Ugwu Confidence message you</p>
+                    <div class="notifyTimeCont">
+                        <p class="notifytime" style="font-size: 12px;">20min</p>
+                        <img src="./resouces/icons/time.svg" alt="" width="1px" height="15px">
+
+                    </div>
+                </div>
+
+                <div class="notifyTooltipBodyCont">
+                    <img src="./resouces/images/graduant-2.jpg" alt="">
+                    <p class="notifyName">Anthony Madubuike</p>
+                    <p class="notifyMessage">Mr Tony messaged you</p>
+                    <div class="notifyTimeCont">
+                        <p class="notifytime" style="font-size: 12px;">2hrs</p>
+                        <img src="./resouces/icons/time.svg" alt="" width="1px" height="15px">
+
+                    </div>
+                </div>
+
+                <div class="notifyTooltipBodyCont">
+                    <img src="./resouces/images/team-1.jpg" alt="">
+                    <p class="notifyName">Ugwu Confidence</p>
+                    <p class="notifyMessage">Julie messaged you</p>
+                    <div class="notifyTimeCont">
+                        <p class="notifytime" style="font-size: 12px;">12hrs</p>
+                        <img src="./resouces/icons/time.svg" alt="" width="1px" height="15px">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="notifyToolTipFooter">
+                <a href="chat.html">show all</a>
+            </div>
+        </div>
+        <!--END OF  NAV NOTIFICATION TOOTIP -->
+
+        <!-- QR-CODE SCANNER ICON -->
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="white"
+            class="qrCode" id="qrCode" data-step="2"
+            data-guide="This is your scanner, used for scanning users and certificates">
+            <path
+                d="M80-680v-200h200v80H160v120H80Zm0 600v-200h80v120h120v80H80Zm600 0v-80h120v-120h80v200H680Zm120-600v-120H680v-80h200v200h-80ZM700-260h60v60h-60v-60Zm0-120h60v60h-60v-60Zm-60 60h60v60h-60v-60Zm-60 60h60v60h-60v-60Zm-60-60h60v60h-60v-60Zm120-120h60v60h-60v-60Zm-60 60h60v60h-60v-60Zm-60-60h60v60h-60v-60Zm240-320v240H520v-240h240ZM440-440v240H200v-240h240Zm0-320v240H200v-240h240Zm-60 500v-120H260v120h120Zm0-320v-120H260v120h120Zm320 0v-120H580v120h120Z" />
+        </svg>
+
+        <!-- SCANNER POP OUT CONTAINER -->
+        <div class="scanner-container">
+            <div class="scannerHead">
+                <h2>Scan UID</h2>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="#e8eaed" class="closeScanner">
+                    <path
+                        d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                </svg>
+            </div>
+            <div class="scanner-frame" id="scannerFrame">
+                <video id="webcam" autoplay></video>
+            </div>
+
+            <button class="scan-button" id="scanButton">Scan</button>
+
+            <div class="status-message" id="statusMessage"></div>
+
+            <div class="user-info" id="userInfo" style="display: none;">
+                <p><strong>Name:</strong> <span id="scanner-name">John Doe</span></p>
+                <p><strong>UID:</strong> <span id="userId">12345678</span></p>
+            </div>
+        </div>
+
+        <a href="" class="userDP" id="userDp"><img src="./resouces/images/team-2.jpg" alt="" data-step="3"
+                data-guide="You can access your profile details here"></a>
+        <!-- END OF SCANNER POP OUT CONTAINER -->
+
+
+        <!-- ============================
+         =======PROFILE ICON TOOLTIP CONTENT======= -->
+        <div id="profileTooltip" class="profileTooltip-content">
+            <div class="profileTooltipHead">
+                <img src="./resouces/images/team-2.jpg" alt="" class="pfTooltipDp" id="userDp">
+                <div class="profileTooltipHeadTxt">
+                    <p id="userName">Ugwu Confidence</p>
+                    <p id="userId" class="userId"></p>
+                </div>
+            </div>
+            <div class="profileTooltipLinks">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="#e8eaed">
+                        <path
+                            d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z" />
+                    </svg>
+                    <p>Profile</p>
+                </div>
+                <div class="speechTxt">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="#e8eaed" class="speech">
+                        <path
+                            d="M80-80v-80q46 0 91-6t88-22q-46-23-72.5-66.5T160-349v-91h160v-120h135L324-822l72-36 131 262q20 40-3 78t-68 38h-56v40q0 33-23.5 56.5T320-360h-80v11q0 35 21.5 61.5T316-252l12 3q40 10 45 50t-31 60q-60 33-126.5 46T80-80Zm572-114-57-56q21-21 33-48.5t12-59.5q0-32-12-59.5T595-466l57-57q32 32 50 74.5t18 90.5q0 48-18 90t-50 74ZM765-80l-57-57q43-43 67.5-99.5T800-358q0-66-24.5-122T708-579l57-57q54 54 84.5 125T880-358q0 81-30.5 152.5T765-80Z" />
+                    </svg>
+                    <p>Speech</p>
+
+                </div>
+                <div class="logout">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="#e8eaed">
+                        <path
+                            d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z" />
+                    </svg>
+                    <p>Logout</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="speecCancelCont">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff"
+                class="cancelSpeech">
+                <path
+                    d="m855-220-64-64q20-81-3-160t-83-138l56-58q55 54 87 126t32 156q0 36-6.5 71T855-220ZM532-541 398-676l-74-146 72-36 131 262q7 14 8 27.5t-3 27.5ZM80-80v-80q46 0 91-6t88-22q-46-23-72.5-66.5T160-349v-91h160v-120h81l80 80h-81v40q0 33-23.5 56.5T320-360h-80v11q0 35 21.5 61.5T316-252l12 3q40 10 45 50t-31 60q-60 33-126.5 46T80-80Zm740 53L28-820l56-56L876-84l-56 57Z" />
+            </svg>
+        </div>
+    </div>
+
+    <!-- ===================================
+        ========END OF NAV SECTION======= -->
+
+
+    <!-- ================================== -->
+    <!-- =======PROFILE EDIT SECTION======= -->
+    <div class="profile-container">
+        <div class="profile-header">
+            <h2>Edit Your Profile</h2>
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"
+                class="closePfEdit">
+                <path
+                    d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+            </svg>
+        </div>
+
+        <div class="profile-picture-section">
+            <img id="profileImage" src="./resouces/images/totalStudent.jpg" alt="Profile Picture">
+            <label for="profilePicture" class="upload-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                    height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                    <path
+                        d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
+                </svg></label>
+            <input type="file" id="profilePicture" accept="image/*" style="display: none;">
+        </div>
+
+        <form class="profile-form" id="profileForm">
+            <div class="inputEdit-group" id="inputEdit1">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" placeholder="Enter your full name">
+                <span class="input-feedback">Looks good!</span>
+            </div>
+
+            <div class="inputEdit-group" id="inputEdit2">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email">
+                <span class="input-feedback">Enter a valid email.</span>
+            </div>
+
+            <div class="inputEdit-group" id="inputEdit3">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="Enter your phone number">
+                <span class="input-feedback">Enter a valid phone number.</span>
+            </div>
+
+            <div class="inputEdit-group" id="inputEdit4">
+                <label for="course">Course</label>
+                <input type="text" id="course" placeholder="Enter your course">
+                <span class="input-feedback">Looks good!</span>
+            </div>
+
+            <div class="inputEdit-group" id="inputEdit5">
+                <label for="bio">Bio</label>
+                <textarea id="bio" rows="4" placeholder="Tell something about yourself"></textarea>
+                <span class="input-feedback">Optional, but a good bio makes your profile unique!</span>
+            </div>
+
+            <button type="submit" class="btn-save" id="button">Save Changes</button>
+        </form>
+    </div>
+
+    <!-- ================================== -->
+    <!-- =======PROFILE EDIT SECTION======= -->
+
+    <!-- ===========================
+    ========SIDEBAR SECTION======= -->
+    <!-- works on mobile devices -->
+    <div class="sidebar" id="sidebar">
+        <li class="NavHam">
+            <a href="#" class="sidebar-link">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="#e8eaed" class="sidebar-icon">
+                    <path
+                        d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z" />
+                </svg>
+                <p> Home</p>
+            </a>
+        </li>
+        <li class="NavHam">
+            <a href="#" class="sidebar-link">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="#5f6368" class="sidebar-icon">
+                    <path
+                        d="M520-600v-240h320v240H520ZM120-440v-400h320v400H120Zm400 320v-400h320v400H520Zm-400 0v-240h320v240H120Zm80-400h160v-240H200v240Zm400 320h160v-240H600v240Zm0-480h160v-80H600v80ZM200-200h160v-80H200v80Zm160-320Zm240-160Zm0 240ZM360-280Z" />
+                </svg>
+                <span>Dashboard</span></a>
+        </li>
+        <li class="NavHam">
+            <a href="#" class="sidebar-link">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="#5f6368" class="sidebar-icon">
+                    <path
+                        d="M120-120v-80l80-80v160h-80Zm160 0v-240l80-80v320h-80Zm160 0v-320l80 81v239h-80Zm160 0v-239l80-80v319h-80Zm160 0v-400l80-80v480h-80ZM120-327v-113l280-280 160 160 280-280v113L560-447 400-607 120-327Z" />
+                </svg>
+                Performances
+            </a>
+        </li>
+
+        <li class="NavHam">
+            <a href="#" class="sidebar-link">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="#5f6368" class="sidebar-icon">
+                    <path
+                        d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h168q13-36 43.5-58t68.5-22q38 0 68.5 22t43.5 58h168q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm80-80h280v-80H280v80Zm0-160h400v-80H280v80Zm0-160h400v-80H280v80Zm200-190q13 0 21.5-8.5T510-820q0-13-8.5-21.5T480-850q-13 0-21.5 8.5T450-820q0 13 8.5 21.5T480-790ZM200-200v-560 560Z" />
+                </svg>
+                Assignments
+            </a>
+        </li>
+        <hr />
+
+
+        <li class="NavHam">
+            <a href="#" class="sidebar-link">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="#5f6368" class="sidebar-icon">
+                    <path
+                        d="M280-240q-17 0-28.5-11.5T240-280v-80h520v-360h80q17 0 28.5 11.5T880-680v600L720-240H280ZM80-280v-560q0-17 11.5-28.5T120-880h520q17 0 28.5 11.5T680-840v360q0 17-11.5 28.5T640-440H240L80-280Zm520-240v-280H160v280h440Zm-440 0v-280 280Z" />
+                </svg>
+                Communication
+            </a>
+        </li>
+        <li class="NavHam">
+            <a href="#" class="sidebar-link">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="#5f6368" class="sidebar-icon">
+                    <path
+                        d="M560-564v-68q33-14 67.5-21t72.5-7q26 0 51 4t49 10v64q-24-9-48.5-13.5T700-600q-38 0-73 9.5T560-564Zm0 220v-68q33-14 67.5-21t72.5-7q26 0 51 4t49 10v64q-24-9-48.5-13.5T700-380q-38 0-73 9t-67 27Zm0-110v-68q33-14 67.5-21t72.5-7q26 0 51 4t49 10v64q-24-9-48.5-13.5T700-490q-38 0-73 9.5T560-454ZM260-320q47 0 91.5 10.5T440-278v-394q-41-24-87-36t-93-12q-36 0-71.5 7T120-692v396q35-12 69.5-18t70.5-6Zm260 42q44-21 88.5-31.5T700-320q36 0 70.5 6t69.5 18v-396q-33-14-68.5-21t-71.5-7q-47 0-93 12t-87 36v394Zm-40 118q-48-38-104-59t-116-21q-42 0-82.5 11T100-198q-21 11-40.5-1T40-234v-482q0-11 5.5-21T62-752q46-24 96-36t102-12q58 0 113.5 15T480-740q51-30 106.5-45T700-800q52 0 102 12t96 36q11 5 16.5 15t5.5 21v482q0 23-19.5 35t-40.5 1q-37-20-77.5-31T700-240q-60 0-116 21t-104 59ZM280-494Z" />
+                </svg>
+                Resources
+            </a>
+        </li>
+        <li class="NavHam">
+            <a href="#" class="sidebar-link">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="#5f6368" class="sidebar-icon">
+                    <path
+                        d="M580-240q-42 0-71-29t-29-71q0-42 29-71t71-29q42 0 71 29t29 71q0 42-29 71t-71 29ZM200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Z" />
+                </svg>
+                Events
+            </a>
+        </li>
+        <hr />
+        <li class="NavHam">
+            <a href="#" class="sidebar-link">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="#5f6368" class="sidebar-icon">
+                    <path
+                        d="M400-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM80-160v-112q0-33 17-62t47-44q51-26 115-44t141-18h14q6 0 12 2-8 18-13.5 37.5T404-360h-4q-71 0-127.5 18T180-306q-9 5-14.5 14t-5.5 20v32h252q6 21 16 41.5t22 38.5H80Zm560 40-12-60q-12-5-22.5-10.5T584-204l-58 18-40-68 46-40q-2-14-2-26t2-26l-46-40 40-68 58 18q11-8 21.5-13.5T628-460l12-60h80l12 60q12 5 22.5 11t21.5 15l58-20 40 70-46 40q2 12 2 25t-2 25l46 40-40 68-58-18q-11 8-21.5 13.5T732-180l-12 60h-80Zm40-120q33 0 56.5-23.5T760-320q0-33-23.5-56.5T680-400q-33 0-56.5 23.5T600-320q0 33 23.5 56.5T680-240ZM400-560q33 0 56.5-23.5T480-640q0-33-23.5-56.5T400-720q-33 0-56.5 23.5T320-640q0 33 23.5 56.5T400-560Zm0-80Zm12 400Z" />
+                </svg>
+                Accounts
+            </a>
+        </li>
+        <li class="NavHam">
+            <a href="#" class="sidebar-link">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="#5f6368" class="sidebar-icon">
+                    <path
+                        d="M440-120v-80h320v-284q0-117-81.5-198.5T480-764q-117 0-198.5 81.5T200-484v244h-40q-33 0-56.5-23.5T80-320v-80q0-21 10.5-39.5T120-469l3-53q8-68 39.5-126t79-101q47.5-43 109-67T480-840q68 0 129 24t109 66.5Q766-707 797-649t40 126l3 52q19 9 29.5 27t10.5 38v92q0 20-10.5 38T840-249v49q0 33-23.5 56.5T760-120H440Zm-80-280q-17 0-28.5-11.5T320-440q0-17 11.5-28.5T360-480q17 0 28.5 11.5T400-440q0 17-11.5 28.5T360-400Zm240 0q-17 0-28.5-11.5T560-440q0-17 11.5-28.5T600-480q17 0 28.5 11.5T640-440q0 17-11.5 28.5T600-400Zm-359-62q-7-106 64-182t177-76q89 0 156.5 56.5T720-519q-91-1-167.5-49T435-698q-16 80-67.5 142.5T241-462Z" />
+                </svg>
+                Supports
+            </a>
+        </li>
+
+    </div>
+
+    <!-- ===========================
+    ========END OF SIDEBAR SECTION======= -->
+
+
+    <!-- ===========================
+        ========SIDEPANEL SECTION======= -->
+    <div class="sidePanel" id="sidePanel">
+        <div class="sidePanelHead">
+            <img src="./resouces/chain2.png" alt="" class="logo">
+            <h2 style="color: white;">Block-Chain</h2>
+        </div>
+
+        <div class="sidePanellinks" id="active" data-step="4"
+            data-guide="This is the Dashboard. It contains acitivities of your account.">
+            <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="#5f6368">
+                    <path
+                        d="M520-600v-240h320v240H520ZM120-440v-400h320v400H120Zm400 320v-400h320v400H520Zm-400 0v-240h320v240H120Zm80-400h160v-240H200v240Zm400 320h160v-240H600v240Zm0-480h160v-80H600v80ZM200-200h160v-80H200v80Zm160-320Zm240-160Zm0 240ZM360-280Z" />
+                </svg>
+                <p>Dashboard</p>
+            </a>
+        </div>
+
+        <div class="sidePanellinks" id="performances" data-step="5"
+            data-guide="This is your Performance. It contains all of your performaces and results in account.">
+            <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="#5f6368">
+                    <path
+                        d="M120-120v-80l80-80v160h-80Zm160 0v-240l80-80v320h-80Zm160 0v-320l80 81v239h-80Zm160 0v-239l80-80v319h-80Zm160 0v-400l80-80v480h-80ZM120-327v-113l280-280 160 160 280-280v113L560-447 400-607 120-327Z" />
+                </svg>
+                <p>Performances</p>
+            </a>
+        </div>
+
+        <div class="sidePanellinks" id="assignments" data-step="6"
+            data-guide="This is your assignment. It contains all of your assignement assigned by your tutor in account.">
+            <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="#5f6368">
+                    <path
+                        d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h168q13-36 43.5-58t68.5-22q38 0 68.5 22t43.5 58h168q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm80-80h280v-80H280v80Zm0-160h400v-80H280v80Zm0-160h400v-80H280v80Zm200-190q13 0 21.5-8.5T510-820q0-13-8.5-21.5T480-850q-13 0-21.5 8.5T450-820q0 13 8.5 21.5T480-790ZM200-200v-560 560Z" />
+                </svg>
+                <p>Assignments</p>
+            </a>
+        </div>
+
+        <div class="sidePanellinks" id="communication" data-step="7"
+            data-guide="This is your communication. you can chat up teacher and pals here">
+            <a href="chat.html">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="#5f6368">
+                    <path
+                        d="M280-240q-17 0-28.5-11.5T240-280v-80h520v-360h80q17 0 28.5 11.5T880-680v600L720-240H280ZM80-280v-560q0-17 11.5-28.5T120-880h520q17 0 28.5 11.5T680-840v360q0 17-11.5 28.5T640-440H240L80-280Zm520-240v-280H160v280h440Zm-440 0v-280 280Z" />
+                </svg>
+                <p>Communication</p>
+            </a>
+        </div>
+
+        <div class="sidePanellinks" id="resources" data-step="8"
+            data-guide="This is your resources. you can access learning center in your resources. feel free to check it out!">
+            <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="#5f6368">
+                    <path
+                        d="M560-564v-68q33-14 67.5-21t72.5-7q26 0 51 4t49 10v64q-24-9-48.5-13.5T700-600q-38 0-73 9.5T560-564Zm0 220v-68q33-14 67.5-21t72.5-7q26 0 51 4t49 10v64q-24-9-48.5-13.5T700-380q-38 0-73 9t-67 27Zm0-110v-68q33-14 67.5-21t72.5-7q26 0 51 4t49 10v64q-24-9-48.5-13.5T700-490q-38 0-73 9.5T560-454ZM260-320q47 0 91.5 10.5T440-278v-394q-41-24-87-36t-93-12q-36 0-71.5 7T120-692v396q35-12 69.5-18t70.5-6Zm260 42q44-21 88.5-31.5T700-320q36 0 70.5 6t69.5 18v-396q-33-14-68.5-21t-71.5-7q-47 0-93 12t-87 36v394Zm-40 118q-48-38-104-59t-116-21q-42 0-82.5 11T100-198q-21 11-40.5-1T40-234v-482q0-11 5.5-21T62-752q46-24 96-36t102-12q58 0 113.5 15T480-740q51-30 106.5-45T700-800q52 0 102 12t96 36q11 5 16.5 15t5.5 21v482q0 23-19.5 35t-40.5 1q-37-20-77.5-31T700-240q-60 0-116 21t-104 59ZM280-494Z" />
+                </svg>
+                <p>Resources</p>
+            </a>
+        </div>
+
+        <div class="sidePanellinks" id="events" data-step="9"
+            data-guide="This your event, you can access calender of the school ">
+            <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="#5f6368">
+                    <path
+                        d="M580-240q-42 0-71-29t-29-71q0-42 29-71t71-29q42 0 71 29t29 71q0 42-29 71t-71 29ZM200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Z" />
+                </svg>
+                <p>Events</p>
+            </a>
+        </div>
+
+        <div class="sidePanellinks" id="accounts" data-step="10"
+            data-guide="This is your account. account is used to manage your account in the way you want it">
+            <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="#5f6368">
+                    <path
+                        d="M400-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM80-160v-112q0-33 17-62t47-44q51-26 115-44t141-18h14q6 0 12 2-8 18-13.5 37.5T404-360h-4q-71 0-127.5 18T180-306q-9 5-14.5 14t-5.5 20v32h252q6 21 16 41.5t22 38.5H80Zm560 40-12-60q-12-5-22.5-10.5T584-204l-58 18-40-68 46-40q-2-14-2-26t2-26l-46-40 40-68 58 18q11-8 21.5-13.5T628-460l12-60h80l12 60q12 5 22.5 11t21.5 15l58-20 40 70-46 40q2 12 2 25t-2 25l46 40-40 68-58-18q-11 8-21.5 13.5T732-180l-12 60h-80Zm40-120q33 0 56.5-23.5T760-320q0-33-23.5-56.5T680-400q-33 0-56.5 23.5T600-320q0 33 23.5 56.5T680-240ZM400-560q33 0 56.5-23.5T480-640q0-33-23.5-56.5T400-720q-33 0-56.5 23.5T320-640q0 33 23.5 56.5T400-560Zm0-80Zm12 400Z" />
+                </svg>
+                <p>Accounts</p>
+            </a>
+        </div>
+
+        <div class="sidePanellinks" id="supports" data-step="11"
+            data-guide="This is the support, you can contact our team here if you're having a technical issue">
+            <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="#5f6368">
+                    <path
+                        d="M440-120v-80h320v-284q0-117-81.5-198.5T480-764q-117 0-198.5 81.5T200-484v244h-40q-33 0-56.5-23.5T80-320v-80q0-21 10.5-39.5T120-469l3-53q8-68 39.5-126t79-101q47.5-43 109-67T480-840q68 0 129 24t109 66.5Q766-707 797-649t40 126l3 52q19 9 29.5 27t10.5 38v92q0 20-10.5 38T840-249v49q0 33-23.5 56.5T760-120H440Zm-80-280q-17 0-28.5-11.5T320-440q0-17 11.5-28.5T360-480q17 0 28.5 11.5T400-440q0 17-11.5 28.5T360-400Zm240 0q-17 0-28.5-11.5T560-440q0-17 11.5-28.5T600-480q17 0 28.5 11.5T640-440q0 17-11.5 28.5T600-400Zm-359-62q-7-106 64-182t177-76q89 0 156.5 56.5T720-519q-91-1-167.5-49T435-698q-16 80-67.5 142.5T241-462Z" />
+                </svg>
+                <p>Supports</p>
+            </a>
+        </div>
+    </div>
+
+    <!-- ===========================
+    ========END OF SIDEPANEL SECTION======= -->
+
+
+    <!-- ===========================
+    ========PROFILE SECTION======= -->
+    <div class="profile" id="profile">
+        <div class="pfHead">
+            <img src="./resouces/images/team-2.jpg" alt="" class="pfDp" id="userDp" style="width: 50px; height:50px">
+            <p class="welcomeMessage">Welcome Back!</p>
+            <p class="pfName" id="userName">Ugwu Confidence</p>
+        </div>
+
+
+    </div>
+    <!-- ===========================
+    ========END OF PROFILE SECTION======= -->
+
+    <!-- ===========================
+    ========ANALYSIS SECTION======= -->
+    <div class="analysis" id="analysis">
+        <div class="analysisHead">
+
+
+            <div id="radialBar-chart-2" class="radialchart2"></div>
+        </div>
+        <div class="areachart">
+            <div class="card1">
+                <div class="cardheader">
+                    <h5 style="color: rgb(4, 225, 225);">Weekly Analysis</h5>
+                </div>
+                <div class="cardbody1">
+                    <div id="area-chart-1"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===========================
+    ========END OF ANALYSIS SECTION======= -->
+
+
+
+    <!-- ===========================
+    ========REPORT SECTION======= -->
+    <div class="graph">
+        <div class="">
+            <div>
+                <div class="card2">
+                    <div class="cardbody">
+                        <div id="line-chart-1"></div>
+                    </div>
+                    <div class="graphTxt">
+                        <h6>Average score for this session</h6>
+                        <h5>70.5%</h5>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <!-- ==================================
+    ========END OF REPORT SECTION======= -->
+
+
+    <!-- ==================================
+    ========LEADERBOARD SECTION======= -->
+    <div class="leaderBoardCont">
+        <p>Leader Board</p>
+        <div class="leaderBoard">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>User-Id</th>
+                        <th>Name</th>
+                        <th>Marks</th>
+                        <th>Percentage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Blk9021</td>
+                        <td style="display: flex; align-items: center;">
+                            <img src="./resouces/images/team-2.jpg" alt="" class="profile-img">
+                            Drek Tony
+                        </td>
+                        <td>1101</td>
+                        <td data-label="Status">
+                            97%
+                            <span class="status-badge grade1">Best</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Blk8902</td>
+                        <td style="display: flex; align-items: center;">
+                            <img src="./resouces/images/testimonial-4.jpg" alt="" class="profile-img">
+                            Awesome Prince
+                        </td>
+                        <td>999</td>
+                        <td data-label="Status">
+                            90%
+                            <span class="status-badge grade2">Better</span>
+                        </td>
+                    </tr>
+                    <tr>
+
+                    <tr>
+
+                        <td>Blk5890</td>
+                        <td style="display: flex;
+                            align-items: center;">
+                            <img src="./resouces/images/testimonial-2.jpg" alt="" class="profile-img">
+                            Anthony Chioma
+                        </td>
+                        <td>939</td>
+                        <td data-label="Status">
+                            85%
+                            <span class="status-badge grade3">Good</span>
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+    <!-- ====================================
+    ========END OF LEADERBOARD SECTION======= -->
+
+    <!-- ========================== -->
+    <!-- =======TOUR SECTION======= -->
+    <div id="tooltip" class="tooltip"></div>
+    <div id="guide" class="guide">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" fill="orange" class="bi bi-robot"
+            viewBox="0 0 16 16">
+            <path
+                d="M6 12.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5ZM3 8.062C3 6.76 4.235 5.765 5.53 5.886a26.58 26.58 0 0 0 4.94 0C11.765 5.765 13 6.76 13 8.062v1.157a.933.933 0 0 1-.765.935c-.845.147-2.34.346-4.235.346-1.895 0-3.39-.2-4.235-.346A.933.933 0 0 1 3 9.219V8.062Zm4.542-.827a.25.25 0 0 0-.217.068l-.92.9a24.767 24.767 0 0 1-1.871-.183.25.25 0 0 0-.068.495c.55.076 1.232.149 2.02.193a.25.25 0 0 0 .189-.071l.754-.736.847 1.71a.25.25 0 0 0 .404.062l.932-.97a25.286 25.286 0 0 0 1.922-.188.25.25 0 0 0-.068-.495c-.538.074-1.207.145-1.98.189a.25.25 0 0 0-.166.076l-.754.785-.842-1.7a.25.25 0 0 0-.182-.135Z" />
+            <path
+                d="M8.5 1.866a1 1 0 1 0-1 0V3h-2A4.5 4.5 0 0 0 1 7.5V8a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1v1a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-1a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1v-.5A4.5 4.5 0 0 0 10.5 3h-2V1.866ZM14 7.5V13a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7.5A3.5 3.5 0 0 1 5.5 4h5A3.5 3.5 0 0 1 14 7.5Z" />
+        </svg>
+    </div>
+    <!-- Skip Button -->
+    <button id="skipBtn" style="position: fixed; top: 10px; right: 20px; z-index: 10000; display: none;">Skip
+        Tour >>></button>
+    <div id="overlay" class="overlay"></div>
+    <!-- ================================= -->
+    <!-- =======END OF TOUR SECTION======= -->
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="./Assets/js/mini-script.js"></script>
+    <script src="./packages/vendor-all.min.js"></script>
+    <script src="./packages/apexcharts.min.js"></script>
+    <script src="./Assets/js/chart-apex.js"></script>
+    <script src="./packages/bootstrap.min.js"></script>
+    <script src="./Assets/js/index.js"></script>
+    <script src="./Assets/js/qrcode.js"></script>
+    <script src="./Assets/js/Ai.js"></script>
+    <script src="./Assets/js/intro.js"></script>
+    <script src="./Assets/js/speech.js"></script>
+</body>
+
+</html>
+
+</html>

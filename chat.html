@@ -1,0 +1,364 @@
+<html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum</title>
+</head>
+<link rel="stylesheet" href="./Assets/css/chat.css">
+
+<body>
+    <div id="floating-button"><a href="dashboard.html">
+            <svg xmlns="http://www.w3.org/2000/svg" height="22px" viewBox="0 -960 960 960" width="22px" fill="white"
+                class="bouncing">
+                <path
+                    d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z" />
+            </svg>
+        </a></div>
+
+    <!-- ---MESSAGING NAV SECTION---- -->
+    <!-- --- MESSAGE CONTAINER---- -->
+    <div class="chatNav">
+        <!-- --- MESSAGE CONTENT---- -->
+        <h3>Forum</h3>
+        <!-- --- MESSAGE NAV LINKS CONTAINER---- -->
+        <div class="navLinks">
+            <!-- --- MESSAGE NAV LINKS CONTENT---- -->
+            <!-- <input type="text" name="" id="" class="searchFriends"> -->
+            <svg xmlns="http://www.w3.org/2000/svg" height="22px" viewBox="0 -960 960 960" width="22px" fill="white"
+                class="notify">
+                <path
+                    d="M160-200v-80h80v-280q0-83 50-147.5T420-792v-28q0-25 17.5-42.5T480-880q25 0 42.5 17.5T540-820v28q80 20 130 84.5T720-560v280h80v80H160Zm320-300Zm0 420q-33 0-56.5-23.5T400-160h160q0 33-23.5 56.5T480-80ZM320-280h320v-280q0-66-47-113t-113-47q-66 0-113 47t-47 113v280Z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" height="22px" viewBox="0 -960 960 960" width="22px" fill="white"
+                class="qrCode">
+                <path
+                    d="M80-680v-200h200v80H160v120H80Zm0 600v-200h80v120h120v80H80Zm600 0v-80h120v-120h80v200H680Zm120-600v-120H680v-80h200v200h-80ZM700-260h60v60h-60v-60Zm0-120h60v60h-60v-60Zm-60 60h60v60h-60v-60Zm-60 60h60v60h-60v-60Zm-60-60h60v60h-60v-60Zm120-120h60v60h-60v-60Zm-60 60h60v60h-60v-60Zm-60-60h60v60h-60v-60Zm240-320v240H520v-240h240ZM440-440v240H200v-240h240Zm0-320v240H200v-240h240Zm-60 500v-120H260v120h120Zm0-320v-120H260v120h120Zm320 0v-120H580v120h120Z" />
+            </svg>
+            <img src="./resouces/images/team-2.jpg" alt="" class="userDp">
+
+            <!-- ---END OF  MESSAGE NAV LINKS CONTENT---- -->
+        </div>
+        <!-- --- END OF MESSAGE NAV LINKS CONTAINER---- -->
+    </div>
+    <!-- --- END MESSAGE CONTAINER---- -->
+    <!-- ---END OF MESSAGING NAV SECTION---- -->
+
+
+    <!-- ---CONTACT DM SECTION--- -->
+    <div class="contactDM">
+        <div class="contactDMHead">
+            <input type="text" name="" id="searchInfo" class="searchFriends" placeholder="search contact..."
+                onkeyup="search_student()">
+        </div>
+        <div class="contactCont">
+            <div class="contact" onclick="showChats()">
+                <div class="DpTxt">
+                    <img src="./resouces/images/team-1.jpg" alt="" class="contactDp">
+                    <span class="active-status"></span>
+                    <p class="DmName">Ugwu Confidence</p>
+                    <!-- <p class="activity">3min</p> -->
+                    <p class="DmEmail"> <a href="mailto:tlynx76@gmail.com">tlynx76@gmail.com</a></p>
+                </div>
+                <p class="DmInfo">Lorem ipsum dolor sit amet ipsum dolor sit...</p>
+
+            </div>
+
+            <div class="contact">
+                <div class="DpTxt">
+                    <img src="./resouces/images/graduant-2.jpg" alt="" class="contactDp">
+                    <span class="active-status"></span>
+                    <p class="DmName">Anthony Madubuike</p>
+                    <p class="activity">30min</p>
+                    <p class="DmEmail"><a href="mailto:tlynx76@gmail.com">tlynx76@gmail.com</a></p>
+                </div>
+                <p class="DmInfo">Lorem ipsum dolor sit amet ipsum dolor sit...</p>
+
+            </div>
+            <div class="contact">
+                <div class="DpTxt">
+                    <img src="./resouces/images/user.jpg" alt="" class="contactDp">
+                    <p class="DmName">Majesty Joseph</p>
+                    <p class="activity">7min</p>
+                    <p class="DmEmail"><a href="mailto:tlynx76@gmail.com">tlynx76@gmail.com</a></p>
+                </div>
+                <p class="DmInfo">Lorem ipsum dolor sit amet ipsum dolor sit...</p>
+
+            </div>
+            <div class="contact">
+                <div class="DpTxt">
+                    <img src="./resouces/images/team-4.jpg" alt="" class="contactDp">
+                    <span class="active-status"></span>
+                    <p class="DmName">Joseph Otokpa</p>
+                    <p class="activity">12min</p>
+                    <p class="DmEmail"> <a href="mailto:tlynx76@gmail.com">tlynx76@gmail.com</a></p>
+                </div>
+                <p class="DmInfo">Lorem ipsum dolor sit amet ipsum dolor sit..</p>
+
+            </div>
+            <div class="contact">
+                <div class="DpTxt">
+                    <img src="./resouces/images/team-1.jpg" alt="" class="contactDp">
+                    <span class="active-status"></span>
+                    <p class="DmName">Comfort Favor</p>
+                    <p class="activity">21min</p>
+                    <p class="DmEmail"> <a href="mailto:tlynx76@gmail.com">tlynx76@gmail.com</a></p>
+                </div>
+                <p class="DmInfo">Lorem ipsum dolor sit amet ipsum dolor sit...</p>
+
+            </div>
+            <div class="contact">
+                <div class="DpTxt">
+                    <img src="./resouces/images/team-3.jpg" alt="" class="contactDp">
+                    <span class="active-status"></span>
+                    <p class="DmName">Bright Favour</p>
+                    <p class="activity">24min</p>
+                    <p class="DmEmail"> <a href="mailto:tlynx76@gmail.com">tlynx76@gmail.com</a></p>
+                </div>
+                <p class="DmInfo">Lorem ipsum dolor sit amet ipsum dolor sit...</p>
+
+            </div>
+            <div class="contact">
+                <div class="DpTxt">
+                    <img src="./resouces/images/team-2.jpg" alt="" class="contactDp">
+                    <span class="active-status"></span>
+                    <p class="DmName">Victor Bro</p>
+                    <p class="activity">10hrs</p>
+                    <p class="DmEmail"> <a href="mailto:tlynx76@gmail.com">tlynx76@gmail.com</a></p>
+                </div>
+                <p class="DmInfo">Lorem ipsum dolor sit amet ipsum dolor sit...</p>
+
+            </div>
+            <div class="contact">
+                <div class="DpTxt">
+                    <img src="./resouces/images/team-1.jpg" alt="" class="contactDp">
+                    <p class="DmName">Ugwu Confidence</p>
+                    <span class="active-status"></span>
+                    <p class="activity">3hrs</p>
+                    <p class="DmEmail"> <a href="mailto:tlynx76@gmail.com">tlynx76@gmail.com</a></p>
+                </div>
+                <p class="DmInfo">Lorem ipsum dolor sit amet ipsum dolor sit...</p>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ---END OF CONTACT DM SECTION--- -->
+
+    <!-- --- CONTACT CHATS SECTION---- -->
+    <!-- CONTACT CHAT CONTAINER -->
+    <div class="friendschats">
+        <div class="friendsChatCont">
+            <!-- --- CONTACT DM CONTAINER---- -->
+            <div class="contactDmCont">
+                <!-- --- DM HEAD CONTAINER---- -->
+                <div class="DmHead">
+                    <!-- ---DM HEAD CONTENT---- -->
+                    <img src="./resouces/images/team-1.jpg" alt="" class="Dp">
+                    <p class="PfName">Ugwu Confidence</p>
+                    <p class="Pfactivity">3min</p>
+                </div>
+                <!-- ---END OF DM HEAD CONTAINER---- -->
+                <!-- --- DM HEAD BUTTONS CONTAINER---- -->
+                <div class="DmBtn">
+                    <img src="./resouces/icons/videocam.svg" alt="" class="videoCall">
+                    <img src="./resouces/icons/kebabIcon.svg" alt="" class="Pfoption">
+                </div>
+            </div>
+            <!-- --- END OF CONTACT DM CONTAINER---- -->
+
+            <!-- --- CHATS SECTION---- -->
+            <div class="chat"></div>
+            <!--  --- MESSAGE CHAT BOX CONTAINER---- -->
+            <div class="message">
+                <div class="messageCont">
+                    <button class="iconStart" id="openFileButton"><img src="./resouces/icons/attach_file.svg"
+                            alt=""></button>
+                    <input type="file" id="fileInput" style="display: none;">
+                    <textarea name="" id="messageBox" class="messageBox" placeholder="Type a message"></textarea>
+                    <button class="iconend"><img src="./resouces/icons/emoji.svg" alt=""></button>
+                </div>
+
+
+                <!-- --- SEND BUTTON CONTENT---- -->
+                <button class="sendMessage">
+                    <div class="svg-wrapper-1">
+                        <div class="svg-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15">
+                                <path fill="none" d="M0 0h24v24H0z"></path>
+                                <path fill="currentColor"
+                                    d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                    <span>Send</span>
+                </button>
+            </div>
+            <!-- --- END OF SEND BUTTON CONTENT---- -->
+
+        </div>
+    </div>
+    <div class="friendsPf">
+
+
+        <div class="notifyHead">
+            <p>Notifications</p>
+        </div>
+        <div class="notifyBody">
+            <div class="notifyBodyCont">
+                <img src="./resouces/images/team-2.jpg" alt="">
+                <p class="notifyName">Majesty Joseph</p>
+                <p class="notifyMessage">Currently login</p>
+                <div class="notifyTimeCont">
+                    <p class="notifytime" style="font-size: 12px;">1min</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="15px" viewBox="0 -960 960 960" width="15px"
+                        fill="#e8eaed">
+                        <path
+                            d="m612-292 56-56-148-148v-184h-80v216l172 172ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-400Zm0 320q133 0 226.5-93.5T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160Z" />
+                    </svg>
+
+                </div>
+            </div>
+
+            <div class="notifyBodyCont">
+                <img src="./resouces/images/graduant-3.jpg" alt="">
+                <p class="notifyName">Favour Bright</p>
+                <p class="notifyMessage">Favour Bright message you</p>
+                <div class="notifyTimeCont">
+                    <p class="notifytime" style="font-size: 12px;">10min</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="15px" viewBox="0 -960 960 960" width="15px"
+                        fill="#e8eaed">
+                        <path
+                            d="m612-292 56-56-148-148v-184h-80v216l172 172ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-400Zm0 320q133 0 226.5-93.5T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160Z" />
+                    </svg>
+
+                </div>
+            </div>
+
+            <div class="notifyBodyCont">
+                <img src="./resouces/images/team-1.jpg" alt="">
+                <p class="notifyName">Ugwu Confidence</p>
+                <p class="notifyMessage">Ugwu Confidence message you</p>
+                <div class="notifyTimeCont">
+                    <p class="notifytime" style="font-size: 12px;">20min</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="15px" viewBox="0 -960 960 960" width="15px"
+                        fill="#e8eaed">
+                        <path
+                            d="m612-292 56-56-148-148v-184h-80v216l172 172ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-400Zm0 320q133 0 226.5-93.5T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160Z" />
+                    </svg>
+
+                </div>
+            </div>
+
+            <div class="notifyBodyCont">
+                <img src="./resouces/images/graduant-2.jpg" alt="">
+                <p class="notifyName">Anthony Madubuike</p>
+                <p class="notifyMessage">Mr Tony messaged you</p>
+                <div class="notifyTimeCont">
+                    <p class="notifytime" style="font-size: 12px;">2hrs</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="15px" viewBox="0 -960 960 960" width="15px"
+                        fill="#e8eaed">
+                        <path
+                            d="m612-292 56-56-148-148v-184h-80v216l172 172ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-400Zm0 320q133 0 226.5-93.5T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160Z" />
+                    </svg>
+
+                </div>
+            </div>
+
+            <div class="notifyBodyCont">
+                <img src="./resouces/images/graduant.jpg" alt="">
+                <p class="notifyName">Henry Angel</p>
+                <p class="notifyMessage">Angel messaged you</p>
+                <div class="notifyTimeCont">
+                    <p class="notifytime" style="font-size: 12px;">12hrs</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="15px" viewBox="0 -960 960 960" width="15px"
+                        fill="#e8eaed">
+                        <path
+                            d="m612-292 56-56-148-148v-184h-80v216l172 172ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-400Zm0 320q133 0 226.5-93.5T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160Z" />
+                    </svg>
+
+                </div>
+            </div>
+
+
+            <div class="notifyBodyCont">
+                <img src="./resouces/images/user.jpg" alt="">
+                <p class="notifyName">Tim Wisdom</p>
+                <p class="notifyMessage">Ugwu Confidence message you</p>
+                <div class="notifyTimeCont">
+                    <p class="notifytime" style="font-size: 12px;">20min</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="15px" viewBox="0 -960 960 960" width="15px"
+                        fill="#e8eaed">
+                        <path
+                            d="m612-292 56-56-148-148v-184h-80v216l172 172ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-400Zm0 320q133 0 226.5-93.5T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160Z" />
+                    </svg>
+
+                </div>
+            </div>
+
+
+            <div class="notifyBodyCont">
+                <img src="./resouces/images/testimonial-2.jpg" alt="">
+                <p class="notifyName">Agbo Faith</p>
+                <p class="notifyMessage">Ugwu Confidence message you</p>
+                <div class="notifyTimeCont">
+                    <p class="notifytime" style="font-size: 12px;">20min</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="15px" viewBox="0 -960 960 960" width="15px"
+                        fill="#e8eaed">
+                        <path
+                            d="m612-292 56-56-148-148v-184h-80v216l172 172ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-400Zm0 320q133 0 226.5-93.5T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160Z" />
+                    </svg>
+
+                </div>
+            </div>
+
+
+            <div class="notifyBodyCont">
+                <img src="./resouces/images/team-1.jpg" alt="">
+                <p class="notifyName">Ugwu Confidence</p>
+                <p class="notifyMessage">Ugwu Confidence message you</p>
+                <div class="notifyTimeCont">
+                    <p class="notifytime" style="font-size: 12px;">20min</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="15px" viewBox="0 -960 960 960" width="15px"
+                        fill="#e8eaed">
+                        <path
+                            d="m612-292 56-56-148-148v-184h-80v216l172 172ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-400Zm0 320q133 0 226.5-93.5T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160Z" />
+                    </svg>
+
+                </div>
+            </div>
+
+
+            <div class="notifyBodyCont">
+                <img src="./resouces/images/team-1.jpg" alt="">
+                <p class="notifyName">Ugwu Confidence</p>
+                <p class="notifyMessage">Ugwu Confidence message you</p>
+                <div class="notifyTimeCont">
+                    <p class="notifytime" style="font-size: 12px;">20min</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="15px" viewBox="0 -960 960 960" width="15px"
+                        fill="#e8eaed">
+                        <path
+                            d="m612-292 56-56-148-148v-184h-80v216l172 172ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-400Zm0 320q133 0 226.5-93.5T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160Z" />
+                    </svg>
+
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+
+    </div>
+</body>
+
+<script src="./Assets/js/chat.js"></script>
+<script src="./Assets/js/anime.js"></script>
+
+</html>
+
+</html>
