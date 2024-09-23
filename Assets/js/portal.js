@@ -26,8 +26,7 @@ function search_student() {
   //=======================================//
   //=======END OF SEARCH-BAR FUNCTION=====//
 
-// Function to sort table rows alphabetically based on the Name column (or any other column)
-// Function to sort table rows alphabetically based on the Name column (adjust index if sorting another column)
+// Function to sort table rows alphabetically based on the Name column
 function sortTableAlpha() {
     let tableBody = document.querySelector('.tableBody .searchCont tbody'); // Get the tbody of the table
     let rows = Array.from(tableBody.querySelectorAll('.searchItem')); // Get all rows with class 'searchItem'
@@ -101,29 +100,33 @@ document.querySelector('.scan').addEventListener('click', function () {
 
 });
 
-let stream; //Store the media stream
-document.getElementById('scanButton').addEventListener('click', function () {
+let stream=null //Store the media stream
+document.getElementById('scanButton').addEventListener('click', function() {
+    let permissionGranted = confirm('Block-Chain Academy wants to acess your camera. Do you allow?');
+    if(permissionGranted){
+            
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
         // Access the webcam
         navigator.mediaDevices.getUserMedia({ video: true })
-            .then(function (mediaStream) {
+            .then(function(mediaStream) {
                 // Get the video element
                 stream = mediaStream; //store stream
-                const video = document.getElementById('webcam');
-                video.style.display = 'block'
+                const video  = document.getElementById('webcam');
+                video.style.display='block'
                 // Set the source of the video element to the webcam stream
                 video.srcObject = mediaStream;
-
+  
                 // Play the video element
                 video.play();
             })
-            .catch(function (error) {
+            .catch(function(error) {
                 console.error("Error accessing webcam:", error);
             });
     } else {
         alert("Sorry, your browser does not support webcam access.");
     }
 
+    }
 
     // Trigger the scanner and show status
     document.getElementById('statusMessage').textContent = "Scanning...";
@@ -153,7 +156,6 @@ document.querySelector('.closeScanner').addEventListener('click', function () {
     document.getElementById('userInfo').style.display = 'none';
     document.getElementById('statusMessage').textContent = "";
 
-    let qrCodeIcon = document.getElementById('qrCode').style.fill = '#fff';
 
 
 })

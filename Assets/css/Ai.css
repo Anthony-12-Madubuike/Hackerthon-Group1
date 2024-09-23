@@ -4,10 +4,10 @@
     grid-template-columns: 1fr 1fr;
     grid-template-areas: 'aiHead aiHead aiHead aiHead'
     'aiBody aiBody aiBody aiBody';
-    /* grid-template-rows: 0fr 1fr; */
+    grid-template-rows: 0fr 1fr;
     /* gap: 100px; */
     width: 50px;
-    height: auto;
+    /* height: auto; */
     border-radius: 10px;
     overflow: hidden;
     position: fixed;
@@ -15,12 +15,12 @@
     right: 20px;
     background-color: white;
     transition: all 0.3s ease;
-    z-index: 1000;
+    z-index: 999;
 }
 
 .chat-container.fullscreen {
     width: 100vw;
-    height: 100vh;
+    height: 99vh;
     top: 0;
     right: 0;
     bottom: 0;
@@ -56,13 +56,16 @@
 .chat-window {
     background:linear-gradient(3000deg, rgb(19, 18, 20), rgb(0, 12, 96));
     grid-area: aiBody;
-
-    padding: 10px;  
-    display: flex;
-    flex-direction: column;
+    /* padding: 10px;   */
+   display: grid;
+   grid-template-rows: 1fr;
     transition: height 0.3s ease;
 }
-
+.messageControl{
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+}
 .chat-window.minimized {
     display: none;
 }
@@ -70,7 +73,6 @@
 .chat-content {
     display: grid;
     box-shadow: 0 10px 8px rgba(0, 0, 0, 0.1);
-    /* box-shadow: 2px 5px 20px 4px #029aff; */
     grid-template-columns: 1fr;
     grid-template-rows: 0.5fr;
     align-items: center;
@@ -78,7 +80,7 @@
     flex-grow: 1;
     overflow-y: scroll;
     padding: 10px;
-    height: 450px;
+    height: 320px;
     background:linear-gradient(3000deg, rgb(9, 1, 72), rgb(58, 0, 128));
 
     border-bottom: 1px solid #ddd;
@@ -144,13 +146,13 @@
     }
 }
 .user-input[type="text"] {
-    margin: 50%;
+    /* margin: 50%; */
     /* border: 1px solid #ddd; */
     color: white;
     border-radius: 5px;
     margin-top: 10px;
-    height: 100px;
-    width: 100%;
+    /* height: 100px;
+    width: 100%; */
 }
 
 
@@ -159,7 +161,7 @@
     color: #fff;
     border: none;
     padding: 10px;
-    margin-top: 10px;
+    /* margin-top: 10px; */
     cursor: pointer;
     width: 100%;
     border-radius: 5px;
@@ -232,9 +234,16 @@
     .chat-content p{
         width: 30vw;
     }
+   
 }
 @media (max-width:528px) {
     p{
         font-size: 10px;
     }
+}
+@media (max-width:243px) {
+   .chat-content{
+    display: grid;
+    /* grid-template-columns: 1fr; */
+   }
 }

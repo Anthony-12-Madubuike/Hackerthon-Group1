@@ -52,4 +52,9 @@ sendButton.addEventListener('click', () => {
         // Scroll to the bottom of the chat
         chatContent.scrollTop = chatContent.scrollHeight;
     }
+    if (window.innerWidth <= 200) {
+        userMsgElement.style.justifySelf='start';
+        
+    }
+  
 });

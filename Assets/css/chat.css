@@ -7,6 +7,7 @@
 =======WEBKIT CODE======== */
 ::-webkit-scrollbar {
     width: 1px;
+    height: 1px;
 
 }
 
@@ -130,9 +131,9 @@ body {
 } */
 
 h3 {
-    color: white;
-    font-family: cursive;
-    padding: 10px;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 7px;
 }
 
 .navLinks {
@@ -176,8 +177,11 @@ h3 {
 
 
 @media (max-width:282px) {
-    .navLinks {
+   .notify,.qrCode{
         display: none;
+    }
+    .navLinks {
+        grid-template-columns: 0.1fr;
     }
 }
 
@@ -284,9 +288,9 @@ h3 {
 .DmName {
     grid-area: DmName;
     font-size: 14px;
-    color: rgb(231, 231, 231);
+    color: rgb(243, 243, 243);
     font-weight: 100;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: sans-serif;
     font-size: 16px;
     /* Adjust as needed */
     white-space: nowrap;
@@ -303,10 +307,9 @@ h3 {
 }
 
 .DmEmail a {
-    color: #adadad;
-    font-size: 10px;
-    font-weight: 100;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #ffffff;
+    font-size: 12px;
+    font-family:Microsoft PhagsPa;
 
 }
 
@@ -316,7 +319,7 @@ h3 {
     color: rgb(162, 161, 161);
     /* background-color: white; */
     font-weight: 100;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: poppins;
 
 
 }
@@ -329,10 +332,10 @@ h3 {
 
 .DmInfo {
     grid-area: DmInfo;
-    font-size: 12px;
-    color: rgb(162, 161, 161);
+    font-size: 13px;
+    color: rgb(196, 196, 196);
     font-weight: 100;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Poppins;
 }
 
 
@@ -694,6 +697,7 @@ h3 {
     }
  
 }
+
 @media (max-width:510px) {
     body {
         grid-template-columns: 0fr 0fr;
@@ -713,3 +717,4 @@ h3 {
 }
  
 }
+

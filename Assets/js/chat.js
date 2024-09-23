@@ -29,9 +29,14 @@ function search_student() {
 function showChats() {
   let dm = document.querySelector('.contactDM');
   dm.style.display = 'none';
+  
   //Disabling the hide function for contactDM on screen nmin 675px
   if (window.innerWidth >= 675) {
-    dm.style.display = 'block';
+    dm.style.display = 'grid';
+  }else{
+    dm.style.display = 'grid';
+    document.querySelector('.friendschats').style.display='none';
+
   }
   // document.body.id('Onclickbody');
 

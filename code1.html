@@ -1,0 +1,69 @@
+<html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./Assets/css/bootstrap.css">
+</head>
+<style></style>
+<body>
+    <div class="col-xl-4 col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5>Tooltips Modal</h5>
+            </div>
+            <div class="card-body">
+                <div id="exampleModalPopovers" class="modal fade" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalPopoversLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalPopoversLabel">Modal Title</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                        aria-hidden="true">&times;</span></button>
+                            </div>
+                            <div class="modal-body">
+                                <h5>Tooltips in a Button</h5>
+                                <p>This <a href="#!" role="button" class="btn  btn-secondary tooltip-test"
+                                        data-toggle="tooltip" title="Button Tooltip"
+                                        data-container="#exampleModalPopovers">button</a>
+                                    triggers a popover on click.</p>
+                                <hr />
+                                <h5>Tooltips in a modal</h5>
+                                <p class="mb-0"><a href="#!" class="tooltip-test" data-toggle="tooltip" title="Tooltip"
+                                        data-container="#exampleModalPopovers">This link</a> and <a href="#!"
+                                        class="tooltip-test" data-toggle="tooltip" title="Tooltip"
+                                        data-container="#exampleModalPopovers">that
+                                        link</a> have tooltips on hover.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn  btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn  btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn  btn-primary" data-toggle="modal"
+                    data-target="#exampleModalPopovers">Launch demo modal</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./packages/bootstrap.min.js"></script>
+    <script>
+        $('#exampleModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget)
+            var recipient = button.data('whatever')
+            var modal = $(this)
+            modal.find('.modal-title').text('New message to ' + recipient)
+            modal.find('.modal-body input').val(recipient)
+        })
+    </script>
+</body>
+
+</html>
+
+</html>

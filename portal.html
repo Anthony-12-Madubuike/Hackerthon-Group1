@@ -16,12 +16,21 @@
     <!-- ==========================-->
     <!-- =======NAV SECTION======= -->
     <ul class="Nav">
+
+        <button class="menu-btn" onclick="toggleSidebar()"><svg xmlns="http://www.w3.org/2000/svg" width="30"
+                height="30" fill="#575757" class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+            </svg>
+        </button>
         <li class="NavLi hideLi"><a href="index.html" class="NavLiA">Home</a></li>
         <!-- nav search bar -->
         <div class="input-wrapper NavLi">
             <input placeholder="search.." class="input" id="searchInfo" name="text" type="text"
                 onkeyup="search_student()">
         </div>
+
+
         <!-- <li class="NavLi">
             <a href="#" class="NavLiA">Sort-By</a>
         </li> -->
@@ -108,18 +117,7 @@
         <li class="NavLi hideLi">
             <a href="register.html" class="NavLiA">Register</a>
         </li>
-        <!-- html code for teacher side bar icon -->
-        <li class="NavLiHam" id="navHam">
-            <label class="hamburger">
-                <input type="checkbox" id="menu-toggle" />
-                <svg viewBox="0 0 32 32">
-                    <path class="line line-top-bottom"
-                        d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22">
-                    </path>
-                    <path class="line" d="M7 16 27 16"></path>
-                </svg>
-            </label>
-        </li>
+
     </ul>
     <!-- =================================-->
     <!-- =======END OF NAV SECTION======= -->
@@ -150,9 +148,24 @@
     </div>
     <!-- END OF SCANNER POP OUT CONTAINER -->
 
+    <nav class="sidebar" id="sidebar">
+        <ul class="sidebar-list">
+            <li><a href="#">News</a></li>
+            <li><a href="#">Library</a></li>
+            <li><a href="portal.html">Portals</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="register.html">Register</a></li>
+        </ul>
+        <button class="close-btn" onclick="toggleSidebar()"><img src="resouces/icons/left-black-arrow.png"
+                alt="ll"></button>
+    </nav>
 
 
-    <div class="leaderBoardCont tableBody">
+    <!-- ===========================
+    ========END OF SIDEBAR SECTION======= -->
+
+
+    <div class="leaderBoardCont tableBody content" id="content">
         <p>Total Students</p>
         <div class="leaderBoard">
             <table class="table searchCont">
@@ -347,6 +360,18 @@
 
 </body>
 <script src="./Assets/js/portal.js"></script>
+<script>
+    function toggleSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        const content = document.getElementById('content');
+
+        // Toggle sidebar visibility
+        sidebar.classList.toggle('open');
+
+        // Shift content to accommodate the sidebar
+        content.classList.toggle('shifted');
+    }
+</script>
 
 </html>
 

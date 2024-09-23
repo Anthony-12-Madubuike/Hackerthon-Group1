@@ -30,7 +30,6 @@ nav li{
     padding: 20px;
 }
 nav a{
-    height: 100%;
     text-decoration: none;
     color: black;
     font-weight: 900;
@@ -86,6 +85,7 @@ nav li:first-child{
 
   .sidebar-list li a:hover {
     background-color: #575757;
+
   }
 
   .close-btn {

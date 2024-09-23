@@ -76,12 +76,12 @@ function stopDragging() {
 //=======END OF FLOATING BUTTON FUNCTION=======//
 
 
-document.getElementById('menu-toggle').addEventListener('change', function () {
-    var sidebar = document.getElementById('sidebar');
-    if (this.checked) {
-        sidebar.style.width = '250px';
-    } else {
-        sidebar.style.width = '0';
-    }
-});
+// document.getElementById('menu-toggle').addEventListener('change', function () {
+//     var sidebar = document.getElementById('sidebar');
+//     if (this.checked) {
+//         sidebar.style.width = '250px';
+//     } else {
+//         sidebar.style.width = '0';
+//     }
+// });
 

@@ -446,7 +446,7 @@ body {
 
 .scanner-container {
     text-align: center;
-    background: linear-gradient(90deg, #021845, #37446e);
+    background: linear-gradient(90deg, #0f0245, #020b2c);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -464,6 +464,7 @@ body {
 .scannerHead {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    align-items: center;
     /* gap: 100px; */
 }
 
@@ -505,7 +506,7 @@ body {
 }
 
 .scan-button {
-    background-color: #007bff;
+    background-color: #3300ff;
     color: #ffffff;
     padding: 10px 20px;
     border: none;
@@ -515,7 +516,7 @@ body {
 }
 
 .scan-button:hover {
-    background-color: #0056b3;
+    background-color: #6a45fa;
 }
 
 #webcam {
@@ -1352,13 +1353,16 @@ tr {
         padding: 0 10px 0 10px;
     }
 
+    .upload-btn {
+        display: none;
+    }
+
 }
 
 @media (max-width:468px) {
     .leaderBoard {
         overflow-x: scroll;
     }
-
     .notifyTooltipLinks {
         grid-template-columns: 1fr 0fr;
     }

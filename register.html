@@ -152,49 +152,16 @@
       localStorage.setItem('proffession', proffession);
 
 
-      // Check if the browser supports notifications
-       // Request Notification Permission if needed
-       if (Notification.permission === 'granted') {
-        sendNotification(adminNo);
-    } else if (Notification.permission === 'default' || Notification.permission === 'denied') {
-        // Ask for permission to send notifications
-        Notification.requestPermission().then(permission => {
-            if (permission === 'granted') {
-                sendNotification(adminNo);
-
-            } else {
-                alert("Notification permission denied.");
-            }
-        });
-    } else {
-        alert("Notifications are blocked.");
-    }
-
-    // Redirect after 3 seconds
-    setTimeout(() => {
-        window.location.href = 'signup.html';
-    }, 9000); // 3 second delay
+     
+      // Redirect after 3 seconds
+        setTimeout(() => {
+      window.location.href = 'signup.html';
+     }, 9000); // 3 second delay
       // Redirect to new page
       window.location.href = 'signup.html';
-    });
-    // Function to display the notification
+      });
     
-// Function to send the notification
-function sendNotification(adminNo) {
-  
-  let fullName = document.getElementById('fullname').value;
-  new Notification('Blockchain Academy', {
-      body: `Dear ${fullName} you've completed your registration into Blockchain Academy. Please do well to Signin into your dashboard`,
-      
-  });
-
-    new Notification('Blockchain Academy', {
-      body: 'Your Admin no is: ' + adminNo,
-      //icon: 'success-icon.png' // You can add a custom icon if available
-  }); 
-
- 
-}
+     
   </script>
 
 </body>

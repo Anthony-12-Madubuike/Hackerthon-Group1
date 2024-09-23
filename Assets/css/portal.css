@@ -52,8 +52,10 @@ body{
 .Nav {
     /* to align our nav items */
     grid-area: nav;
-    display: flex;
-    justify-content: flex-end;
+    display: grid;
+    justify-content: end;
+    align-items: center;
+    grid-template-columns: 0fr 0fr 0fr 0fr;
     gap: 50px;
     padding: 1%;
     /* border-bottom: solid orange; */
@@ -62,8 +64,11 @@ body{
 
 /* styling for nav link */
 .NavLi {
+  display: grid;
     list-style-type: none;
     font-family: sans-serif;
+    justify-content: end;
+
 }
 
 /* styling for the nav anchor tags */
@@ -92,6 +97,8 @@ body{
     justify-content: center;
     gap: 15px;
     position: relative;
+    grid-area: search;
+    justify-self: end;
   }
   
   .input {
@@ -152,6 +159,9 @@ body{
   .dropdown {
     position: relative;
     display: inline-block;
+    grid-area: dropdown;
+    justify-self: end;
+
   }
 
   .dropbtn {
@@ -493,93 +503,100 @@ body{
 }
 
 
-
-/* styling for the  nav side bar icon */
-.hamburger {
-    cursor: pointer;
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    z-index: 1000;
-}
-
-.hamburger input {
-    display: none;
-}
-
-.hamburger svg {
-    height: 1.5em;
-    transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.line {
-    fill: none;
-    stroke: orange;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-width: 3;
-    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.line-top-bottom {
-    stroke-dasharray: 12 63;
-}
-
-.hamburger input:checked+svg {
-    transform: rotate(-45deg);
-}
-
-.hamburger input:checked+svg .line-top-bottom {
-    stroke-dasharray: 20 300;
-    stroke-dashoffset: -32.42;
-}
-
-/* ============================ */
-/*======= SIDEBAR STYLES=======*/
 .sidebar {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #5a85d630;
-    backdrop-filter: blur(10px);
-    overflow-x: hidden;
-    transition: width 0.5s;
-    padding-top: 60px;
-    z-index: 999;
+  display: none;
+  grid-template-columns: 1fr;
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  position: fixed;
+  left: -250px; /* Hidden by default */
+  top: 0;
+  transition: left 0.3s ease;
+  z-index: 1000;
+  grid-area: sidebar;
 }
 
-.sidebar .NavHam a {
-    width: 13rem;
-    padding: 10px 15px;
-    margin: 0.4rem;
-    text-decoration: none;
-    font-size: 1.2em;
-    color: #f0eaea;
-    display: block;
-    transition: color 0.3s;
+.sidebar-list {
+  list-style: none;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
 }
 
-.sidebar .NavHam {
-    list-style-type: none;
+.sidebar-list li {
+  margin-bottom: 15px;
 }
 
-.sidebar .NavHam a:hover {
-    color: #469ef6;
-    background-color: rgba(255, 255, 255, 0.08);
-    border-radius: 5px;
+.sidebar-list li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background 0.3s ease;
 }
 
-.sidebar .sidebar-link {
-    display: flex;
-    align-items: center;
+.sidebar-list li a:hover {
+  background-color: #575757;
+
 }
 
-.sidebar .sidebar-icon {
-    width: 1.5rem;
-    height: 1.5rem;
-    margin-right: 0.7rem;
+.close-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  height: 12vh;
+  /* padding: 10px; */
+  margin: 20px;
+  /* width: 50px; */
+  align-items: center;
+  justify-self: center;
+ 
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+}
+
+.menu-btn {
+  font-size: 24px;
+  padding: 10px 20px;
+  background:transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: none;
+  fill: #575757;
+}
+
+
+
+.sidebar.open {
+  left: 0; /* Make the sidebar visible */
+}
+
+.content.shifted {
+  margin-left: 250px; /* Move the content when sidebar is visible */
+}
+@media (max-width:461px) {
+  .Nav{
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-area: 'sidebar sidebar search dropdown';
+  }
+  .menu-btn{
+      display: block;
+  }
+  .sidebar{
+      display: grid;
+  }
+
 }
 /* ============================ */
 /*======= SIDEBAR STYLES=======*/
@@ -621,6 +638,11 @@ body{
         padding-top: 10px;
     }
 
+}
+@media (max-width:239px) {
+  .dropdown{
+    display: none;
+  }
 }
 
 /* End of responsivity code for the nav */
