@@ -65,91 +65,127 @@ body {
 }
 
 /* styling for the teacher nav side bar icon */
-.hamburger {
-    cursor: pointer;
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    z-index: 1000;
-}
-
-.hamburger input {
-    display: none;
-}
-
-.hamburger svg {
-    height: 1.5em;
-    transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.line {
-    fill: none;
-    stroke: orange;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-width: 3;
-    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.line-top-bottom {
-    stroke-dasharray: 12 63;
-}
-
-.hamburger input:checked+svg {
-    transform: rotate(-45deg);
-}
-
-.hamburger input:checked+svg .line-top-bottom {
-    stroke-dasharray: 20 300;
-    stroke-dashoffset: -32.42;
-}
-
-/* styling the teacher side bar for mobile devices */
 .sidebar {
+    display: none;
+    grid-template-columns: 1fr;
+    width: 250px;
     height: 100%;
-    width: 0;
+    background-color: #333;
     position: fixed;
+    left: -250px; /* Hidden by default */
     top: 0;
-    left: 0;
-    background-color: #5a85d630;
-    backdrop-filter: blur(10px);
-    overflow-x: hidden;
-    transition: width 0.5s;
-    padding-top: 60px;
-    z-index:1;
-}
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
 
-.sidebar .teacherNavHam a {
-    width: 13rem;
-    padding: 10px 15px;
-    margin: 0.4rem;
-    text-decoration: none;
-    font-size: 1.2em;
-    color: #f0eaea;
-    display: block;
-    transition: color 0.3s;
-}
-
-.sidebar .teacherNavHam {
-    list-style-type: none;
-}
-
-.sidebar .teacherNavHam a:hover {
-    color: #469ef6;
-    background-color: rgba(255, 255, 255, 0.08);
-    border-radius: 5px;
-}
-
-.sidebar .sidebar-link {
-    display: flex;
+  .sidebar-list {
+    list-style: none;
+    display: grid;
     align-items: center;
-}
+    justify-content: center;
+    padding: 20px;
+  }
 
-.sidebar .sidebar-icon {
-    width: 1.5rem;
-    height: 1.5rem;
-    margin-right: 0.7rem;
+  .sidebar-list li {
+    margin-bottom: 15px;
+  }
+
+  .sidebar-list li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+  }
+
+  .sidebar-list li a:hover {
+    background-color: #575757;
+
+  }
+
+  .close-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    width: 50px;
+    height: 10vh;
+    align-items: center;
+    justify-self: center;
+   
+  }
+
+  .content {
+    flex: 1;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+  }
+
+  .menu-btn {
+    font-size: 24px;
+    padding: 10px 20px;
+    background:transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: none;
+    fill: #575757;
+  }
+
+
+
+  .sidebar.open {
+    left: 0; /* Make the sidebar visible */
+  }
+
+  .content.shifted {
+    margin-left: 250px; /* Move the content when sidebar is visible */
+  }
+  @media (max-width:768px) {
+  
+    .menu-btn{
+        display: block;
+    }
+    .sidebar{
+        display: grid;
+    }
+    .nav{
+        grid-template-columns: 1fr 0fr;
+        /* gap: 100px; */
+        /* padding: 0 50px 0; */
+    }
+    .nav ul{
+      display: flex;
+       align-items: center;
+       justify-content: end;
+       /* background-color: rgb(15, 69, 116); */
+       /* width: 20px; */
+       
+    }
+    .nav ul button{
+        display: grid;
+        justify-content: end;
+        /* background-color: aqua; */
+    }
+    .nav a{
+        font-size: 10px;
+        font-weight: bold;
+    }
+ 
+  }
+@media (max-width:287px) {
+    .nav a{
+        display: none;
+    }
+    .nav{
+        grid-template-columns: 1fr;
+    }
+  
 }
+ 
 
 /* Responsivity code for the teacher nav */
 @media (max-width: 900px) {
@@ -157,56 +193,23 @@ body {
         font-size: 15px;
     }
 
-    .teacherNavLiHam {
-        display: none;
-    }
+  
 }
 
-@media (min-width: 900px) {
-    .teacherNavLiHam {
-        display: none;
-    }
-}
+
 
 @media (max-width: 460px) {
     .teacherNavLi {
         display: none;
     }
 
-    .teacherNavLiHam {
-        display: block;
-        margin: 2rem 0 0;
-    }
 }
 
-@media (max-width: 200px) {
-    .teacherNavLiHam {
-        display: block;
+@media (min-width: 460px) {
+    .menu-btn{
+        display: none;
     }
 
-    .sidebar {
-        padding-top: 10px;
-    }
-
-    .hamburger {
-        position: fixed;
-        top: 5px;
-        left: 5px;
-    }
-
-    .sidebar .teacherNavHam a {
-        padding: 2px 2px;
-        font-size: 0.3em;
-    }
-
-    .hamburger svg {
-        height: 1em;
-    }
-
-    .teacherNavHam .sidebar-link .sidebar-icon {
-        width: 0.5rem;
-        height: 0.5rem;
-    }
 }
 
 /* end of nav responsivity */
@@ -218,7 +221,7 @@ body {
      align-items: center;
      padding: 10px;
      font-family: poppins;
-    margin-top: 60px;
+    margin-top: 90px;
 }
 .container{
     max-width: 700px;
@@ -327,9 +330,7 @@ form .button input:hover{
 }
 /*responsive*/
 @media (max-width: 584px){
-    .first-contain{
-        margin-top: 200px;
-    }
+   
     .container{
         max-width: 700px;
     }

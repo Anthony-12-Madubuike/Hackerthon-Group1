@@ -97,8 +97,6 @@ body{
     justify-content: center;
     gap: 15px;
     position: relative;
-    grid-area: search;
-    justify-self: end;
   }
   
   .input {
@@ -159,9 +157,6 @@ body{
   .dropdown {
     position: relative;
     display: inline-block;
-    grid-area: dropdown;
-    justify-self: end;
-
   }
 
   .dropbtn {
@@ -514,7 +509,6 @@ body{
   top: 0;
   transition: left 0.3s ease;
   z-index: 1000;
-  grid-area: sidebar;
 }
 
 .sidebar-list {
@@ -586,10 +580,6 @@ body{
   margin-left: 250px; /* Move the content when sidebar is visible */
 }
 @media (max-width:461px) {
-  .Nav{
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-area: 'sidebar sidebar search dropdown';
-  }
   .menu-btn{
       display: block;
   }
