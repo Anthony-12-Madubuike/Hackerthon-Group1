@@ -12,19 +12,19 @@ function search_student() {
     //     return;
     // }
     for (i = 0; i < contacts.length; i++) {
-      let contactText = contacts[i].textContent || contacts[i].innerText;
-      if (!contactText.toLowerCase().includes(input)) {
-        contacts[i].style.display = 'none'
-      }else{
-        contacts[i].style.display = 'table-row'
-       
+        let contactText = contacts[i].textContent || contacts[i].innerText;
+        if (!contactText.toLowerCase().includes(input)) {
+            contacts[i].style.display = 'none'
+        } else {
+            contacts[i].style.display = 'table-row'
 
-      }
-      
+
+        }
+
     }
-  }
-  //=======================================//
-  //=======END OF SEARCH-BAR FUNCTION=====//
+}
+//=======================================//
+//=======END OF SEARCH-BAR FUNCTION=====//
 
 // Function to sort table rows alphabetically based on the Name column
 function sortTableAlpha() {
@@ -43,7 +43,7 @@ function sortTableAlpha() {
 }
 
 // Event listener to trigger sorting when 'Alpha' option is selected
-document.querySelector('input[name="sort"][value="Alpha"]').addEventListener('change', function() {
+document.querySelector('input[name="sort"][value="Alpha"]').addEventListener('change', function () {
     if (this.checked) {
         sortTableAlpha(); // Call the sorting function
     }
@@ -100,31 +100,31 @@ document.querySelector('.scan').addEventListener('click', function () {
 
 });
 
-let stream=null //Store the media stream
-document.getElementById('scanButton').addEventListener('click', function() {
+let stream = null //Store the media stream
+document.getElementById('scanButton').addEventListener('click', function () {
     let permissionGranted = confirm('Block-Chain Academy wants to acess your camera. Do you allow?');
-    if(permissionGranted){
-            
-    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-        // Access the webcam
-        navigator.mediaDevices.getUserMedia({ video: true })
-            .then(function(mediaStream) {
-                // Get the video element
-                stream = mediaStream; //store stream
-                const video  = document.getElementById('webcam');
-                video.style.display='block'
-                // Set the source of the video element to the webcam stream
-                video.srcObject = mediaStream;
-  
-                // Play the video element
-                video.play();
-            })
-            .catch(function(error) {
-                console.error("Error accessing webcam:", error);
-            });
-    } else {
-        alert("Sorry, your browser does not support webcam access.");
-    }
+    if (permissionGranted) {
+
+        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+            // Access the webcam
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(function (mediaStream) {
+                    // Get the video element
+                    stream = mediaStream; //store stream
+                    const video = document.getElementById('webcam');
+                    video.style.display = 'block'
+                    // Set the source of the video element to the webcam stream
+                    video.srcObject = mediaStream;
+
+                    // Play the video element
+                    video.play();
+                })
+                .catch(function (error) {
+                    console.error("Error accessing webcam:", error);
+                });
+        } else {
+            alert("Sorry, your browser does not support webcam access.");
+        }
 
     }
 
@@ -206,7 +206,7 @@ btnToggleTTS.addEventListener('click', function () {
         alert('Text-to-Speech activated! Highlight any text to hear it aloud.');
         document.addEventListener('mouseup', handleTextSelection); // Listen for text selection
 
-    } 
+    }
 });
 
 document.querySelector('.speecCancelCont').addEventListener('click', function () {
@@ -218,4 +218,28 @@ document.querySelector('.speecCancelCont').addEventListener('click', function ()
 })
 //=================================================//
 // ========END OF SPEECH SYNTHESIS FUNCTION=======//
+
+
+// =======LIGHT MODE SCRIPT FUNCTION=======//
+const checkbox = document.querySelector('.checkbox');
+
+  checkbox.addEventListener('change', function () {
+    if (this.checked) {
+      document.documentElement.setAttribute('data-theme', 'light');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  });
+
+  // Set initial theme based on the user's system preference (optional)
+  window.addEventListener('load', () => {
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (prefersDarkScheme) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      checkbox.checked = false;
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+      checkbox.checked = true;
+    }
+  });
 

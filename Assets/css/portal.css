@@ -22,6 +22,71 @@ body{
     background: linear-gradient(to bottom, #000000, #6e58fe);
 
 }
+/* =======Light mode styles======= */
+
+.switch-name {
+  --dark-sky: #6e58fe;
+  --moon: #ffd365;
+  --light-sky: #fff;
+  --sun: #f8d928;
+  display: inline-block;
+  position: relative;
+  border-radius: 5em;
+  cursor: pointer;
+  width: 50px;
+  height: 25px;
+  overflow: hidden;
+  transition: all .5s;
+}
+
+.switch-name .back {
+  background-color: var(--dark-sky);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  transition: .5s ease-in-out;
+}
+
+.switch-name .checkbox {
+  opacity: 0;
+}
+
+.switch-name .checkbox:checked ~ .back {
+  background-color: var(--light-sky);
+}
+
+.switch-name .checkbox:checked ~ .moon {
+  transform: translate(100%) rotate(180deg);
+  opacity: 0;
+}
+
+.switch-name .checkbox:checked ~ .sun {
+  transform: translate(100%) rotate(180deg);
+  opacity: 1;
+}
+
+.switch-name .moon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 70%;
+  padding: .2em;
+  fill: var(--moon);
+  transition: .5s;
+}
+
+.switch-name .sun {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 70%;
+  padding: .2em;
+  fill: var(--sun);
+  transition: .5s;
+  opacity: 0;
+}
 /* ========================
 =======WEBKIT CODE======== */
 ::-webkit-scrollbar {
@@ -107,7 +172,7 @@ body{
     outline: none;
     border-radius: 50%;
     transition: .5s ease-in-out;
-    background-color: #7e4fd4;
+    background-color: #6e58fe;
     box-shadow: 0px 0px 1px #170101;
     padding: 5px;
     color: #fff;
@@ -534,12 +599,12 @@ body{
 }
 
 .sidebar-list li a:hover {
-  background-color: #575757;
+  background-color: orange;
 
 }
 
 .close-btn {
-  background-color: red;
+  background-color: orange;
   color: white;
   border: none;
   cursor: pointer;
@@ -559,7 +624,7 @@ body{
   transition: margin-left 0.3s ease;
 }
 
-.menu-btn {
+.menu-btn{
   font-size: 24px;
   padding: 10px 20px;
   background:transparent;
@@ -567,7 +632,6 @@ body{
   border: none;
   cursor: pointer;
   display: none;
-  fill: #575757;
 }
 
 
@@ -617,6 +681,25 @@ body{
         display: block;
         margin: 2rem 0 0;
     }
+}
+@media (min-width:367px) {
+  li #mode{
+    display: none;
+    /* padding: 10px; */
+    /* margin: 10px; */
+    
+  }
+}
+@media (max-width:367px) {
+  .switch-name{
+    display: none;
+  }
+   li #mode{
+    display: block;
+    /* padding: 10px; */
+    /* margin: 10px; */
+    
+  }
 }
 
 @media (max-width: 200px) {
