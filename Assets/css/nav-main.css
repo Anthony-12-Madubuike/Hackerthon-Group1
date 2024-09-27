@@ -128,7 +128,7 @@ nav li:first-child{
   }
 
   .content.shifted {
-    margin-left: 250px; /* Move the content when sidebar is visible */
+    margin-left: 150px; /* Move the content when sidebar is visible */
   }
   @media (max-width:768px) {
   

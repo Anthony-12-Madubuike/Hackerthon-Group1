@@ -9,11 +9,12 @@
     <link rel="stylesheet" href="./Assets/css/style.css">
     <link rel="stylesheet" href="./Assets/css/nav-style.css">
     <link rel="stylesheet" href="./Assets/css/nav-main.css">
+    <link rel="stylesheet" href="./packages/node_modules/aos/dist/aos.css" />
 
 </head>
 
 <body>
-    <div class="scroll-watcher"></div>
+    <div class="scroll-bar"></div>
 
     <nav class="nav">
         <a href="#" class="txt" style="padding: 0 0 0 5px;">Block-Chain Academy</a>
@@ -86,7 +87,7 @@
         <p>Our college provides tutelage for...</p>
 
         <div class="content-area">
-            <div class="single-service" data-aos="fade-up">
+            <div class="single-service" data-aos="fade-up" data-aos-duration="500" data-aos-delay="1">
                 <div class="icon-area">
                     <img src="resouces/icons/laptop_mac_24dp_FILL0_wght400_GRAD0_opsz24.png" alt="">
                 </div>
@@ -94,7 +95,7 @@
                 <p>Click here to see more.</p>
             </div>
 
-            <div class="single-service">
+            <div class="single-service" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="2">
                 <div class="icon-area">
                     <img src="resouces/icons/wallet.png" alt="">
                 </div>
@@ -102,7 +103,7 @@
                 <p>Click here to see more.</p>
             </div>
 
-            <div class="single-service">
+            <div class="single-service" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="3">
                 <div class="icon-area">
                     <img src="resouces/icons/experiment_24dp_FILL0_wght400_GRAD0_opsz24.png" alt="">
                 </div>
@@ -112,7 +113,7 @@
 
 
         </div>
-        <div class="content-area">
+        <div class="content-area" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="4">
             <div class="single-service">
                 <div class="icon-area">
                     <img src="resouces/icons/brush_24dp_FILL0_wght400_GRAD0_opsz24.png" alt="">
@@ -121,7 +122,7 @@
                 <p>Click here to see more.</p>
             </div>
 
-            <div class="single-service">
+            <div class="single-service" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="5">
                 <div class="icon-area">
                     <img src="resouces/icons/icons8-hacker-50.png" alt="">
                 </div>
@@ -129,7 +130,7 @@
                 <p>Click here to see more.</p>
             </div>
 
-            <div class="single-service">
+            <div class="single-service" data-aos="fade-up" data-aos-duration="3500" data-aos-delay="6">
                 <div class="icon-area">
                     <img src="resouces/icons/chip-card.png" alt="">
                 </div>
@@ -148,7 +149,7 @@
         <p class="man-info">Hear from our graduates</p>
 
         <div class="wrapper">
-            <div class="box">
+            <div class="box" data-aos="fade-left" data-aos-duration="1000">
                 <img src="resouces/images/New folder/teacher 1.jpg" alt="">
                 <div class="info">
                     <h2>Uzor Chike (.Msc)</h2>
@@ -157,7 +158,7 @@
                 </div>
             </div>
 
-            <div class="box">
+            <div class="box" data-aos="fade-up" data-aos-duration="1000">
                 <img src="resouces/images/New folder/teacerh 2.jpg" alt="">
                 <div class="info">
                     <h2>Sasha Mimi Aduda</h2>
@@ -166,7 +167,7 @@
                 </div>
             </div>
 
-            <div class="box">
+            <div class="box" data-aos="fade-right"  data-aos-duration="1000">
                 <img src="resouces/images/New folder/dir.jpg" alt="">
                 <div class="info">
                     <h2>Dir. Thomas Findel, Phd</h2>
@@ -176,13 +177,13 @@
             </div>
         </div>
         <button
-            style="padding:15px; background:rgb(46, 2, 2); color:white; border:solid white; border-radius:40px;">Start
+            style="padding:15px; background:rgb(46, 2, 2); color:white; border:solid white; border-radius:40px;" data-aos="zoom-out-up" data-aos-duration="1000">Start
             Today</button>
 
 
     </section>
 
-    <section class="work-area" id="work">
+    <section class="work-area" id="work" data-aos="fade-in" data-aos-duration="2000" data-aos-delay="2">
         <h3 class="header-text">Our <span>Works</span></h3>
         <p>Community and School Projects</p>
 
@@ -226,7 +227,8 @@
         <h3 class="header-text">Get our newsletter</h3>
         <form action="">
             <input type="email" name="email" id="email" placeholder="Email..." required>
-            <button class="newsSubmit">Drop your email</button>
+            <div class="newletterBtnCont"><button class="newsSubmit">Drop your email</button></div>
+            
 
         </form>
     </section>
@@ -246,7 +248,7 @@
     </section>
 
     <footer>
-        <p>All rights reserved by <a href="#">Team Chain Titans</a></p>
+        <p> &copy; All rights reserved by <a href="#">Team Chain Titans</a></p>
         <p>Madubuike Anthony, Otokpa Joseph, Joseph Majesty</p>
         <ul class="example-2">
             <li class="icon-content">
@@ -302,7 +304,10 @@
     </footer>
     <!-- <script src="./packages/isotope/isotope.pkgd.min.js"></script> -->
     <!-- <script src="anime.js"></script> -->
+     <script src="./packages/node_modules/aos/dist/aos.js"></script>
     <script>
+        AOS.init();
+
         function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');
             const content = document.getElementById('content');
@@ -313,6 +318,7 @@
             // Shift content to accommodate the sidebar
             content.classList.toggle('shifted');
         }
+    
     </script>
 </body>
 

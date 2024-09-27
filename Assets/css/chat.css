@@ -307,9 +307,9 @@ h3 {
 }
 
 .DmEmail a {
-    color: #ffffff;
+    color: #cecece;
     font-size: 12px;
-    font-family:Microsoft PhagsPa;
+    /* font-family:Microsoft PhagsPa; */
 
 }
 
@@ -459,7 +459,6 @@ h3 {
     grid-template-columns: 0.8fr 0.1fr;
     gap: 10px;
     padding-left: 10px;
-    /* background-color: green; */
 }
 
 .messageCont {
@@ -713,7 +712,7 @@ h3 {
     display: none;
    }
    .contactDM {
-    display: block;
+    display: grid;
 }
  
 }

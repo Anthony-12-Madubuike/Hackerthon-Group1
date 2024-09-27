@@ -34,7 +34,7 @@ function showChats() {
   if (window.innerWidth >= 675) {
     dm.style.display = 'grid';
   }else{
-    dm.style.display = 'grid';
+    dm.style.display = 'none';
     document.querySelector('.friendschats').style.display='none';
 
   }
@@ -62,7 +62,7 @@ function checkWindowSize() {
   let friendName = document.querySelector('.pfName')
   //CONDITION FOR DEVICE WIDTH GREATER THAN 675px
   if (window.innerWidth >= 675) {
-    dm.style.display = 'block'
+    dm.style.display = 'grid'
     chat.style.display = 'grid'
   }
   else if (dm.style.display == 'none') {

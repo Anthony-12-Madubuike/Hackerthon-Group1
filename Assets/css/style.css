@@ -11,6 +11,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+  display: grid;
+  grid-template-columns: 1fr;
+  
+}
 html{
 
     font-family: poppins;
@@ -185,7 +190,7 @@ section p{
 /****************/
 /*scroll watcher*/
 /****************/
-  .scroll-watcher {
+  .scroll-bar {
     height: 2px;
     position: fixed;
     top: 0;
@@ -345,6 +350,7 @@ header nav li a{
   border-radius: 30px;
 }
 
+
 @media (max-width: 800px){
     .banner-area{
         min-height: 600px;
@@ -471,6 +477,7 @@ p.socials a{
     margin-bottom: 30px;
     text-align: center;
     color: black;
+
 }
 .wrapper{
     width: 90%;
@@ -666,39 +673,51 @@ p.socials a{
 /**8. NEWSLETTER**/
 /*****************/
 .newsletter{
-    background: #ffffff;
+  background: #ffffff;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-content: center;
 }
 .newsletter form{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    width: 60%;
-    flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-self: center;
+  align-items: center;
+  justify-content: center;
+  /* flex-wrap: wrap; */
+  width: 60%;
+  flex-direction: column;
+}
+.newletterBtnCont{
+  display: grid;
+  align-items: center;
+  justify-content: center;
 }
 .newsletter form .btn{
-    padding: 20px 40px;
+  padding: 15px 40px;
 }
 form .btn:hover{
-    background-color: orange;
-    color: rgb(94, 0, 0);
-    transition: 1s;
+  background-color: orange;
+  color: rgb(94, 0, 0);
+  transition: 1s;
 }
 .newsletter form input{
-    padding: 15px;
-    font-size: 18px;
-    width: 100%;
-    margin: 25px 0;
-    border-radius: 50px;
+  padding: 15px;
+  font-size: 18px;
+  /* width: 100%; */
+  margin: 25px 0;
+  border-radius: 50px;
 }
 
- @media (max-width: 1000px){
-    .newsletter form input{
-        margin-top: 30px;
-        flex-basis: 100%;
-        margin: 0 0 20px 0;
-    }
- }
+@media (max-width: 1000px){
+  .newsletter form input{
+      margin-top: 30px;
+      flex-basis: 100%;
+      margin: 0 0 20px 0;
+  }
+}
+
 
 /*************/
 /**9. FOOTER**/

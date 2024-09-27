@@ -1339,6 +1339,9 @@ tr {
     .leaderBoard {
         height: 50vh;
     }
+    .guide{
+        display: none;
+    }
 }
 
 @media (max-width:500px) {
