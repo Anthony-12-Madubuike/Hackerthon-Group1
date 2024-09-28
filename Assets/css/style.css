@@ -35,6 +35,7 @@ a.btn{
     background-color: rgb(94, 0, 0);
     opacity: 1;
     border-radius: 50px;
+    cursor: pointer;
 }
 section{
     display: flex;
@@ -196,7 +197,7 @@ section p{
     top: 0;
     z-index: 500;
     background-color: orange;
-    width: 99%;
+    width: 97%;
     scale: 0 1;
     transform-origin: left;
     animation: scroll-watcher linear;
@@ -248,12 +249,6 @@ header nav li a{
     color: white;
     border-bottom: 1px solid orange;
 }
-/* header nav li a:hover{
-    transition: 1s;
-    color: rgb(255, 246, 196);
-    border-bottom: 0.5px solid orange;
-} */
-
 
 @media (max-width: 800px){
     header{
@@ -278,7 +273,6 @@ header nav li a{
     text-align: center;
     min-height: 100vh;
     color: white;
-    z-index: -1;
 }
 .banner-area .img-area::before{
     content: '';
@@ -288,8 +282,6 @@ header nav li a{
     width: 100%;
     height: 100%;
     background-size: cover;
-    /* opacity: 0.9;
-    filter: brightness(30%); */
     z-index: -1;
     background-image: url(/resouces/images/hero.jpg);
     background-position: center center;
@@ -321,15 +313,15 @@ header nav li a{
     margin-bottom: 40px;
     font-size: 25px;
 }
-.banner-text .btn:hover{
+/* .banner-text .btn:hover{
     background-color: orange;
     color: rgb(94, 0, 0);
     transition: 1s;
-}
-.banner-area a.btn{
+} */
+/* .banner-area a.btn{
     padding: 15px 30px;
     animation: ease-in-out;
-}
+} */
 .banner-text{
     opacity: 0;
     margin-top: 100px;
@@ -342,13 +334,7 @@ header nav li a{
      }
 }
 
-.learnMoreBtn{
-  padding: 12px;
-  border: solid orange;
-  background: transparent;
-  color: white;
-  border-radius: 30px;
-}
+
 
 
 @media (max-width: 800px){
@@ -468,7 +454,7 @@ p.socials a{
 /**********************/
 .management{
     background-color: rgba(0, 0,0,0.3);
-    z-index: -1;
+    /* z-index: -1; */
 }
 .man-info{
     max-width: 775px;
@@ -490,6 +476,40 @@ p.socials a{
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
+}
+.wrapper {
+  position: relative;
+  overflow: hidden; /* To prevent the zoom animation from overflowing */
+}
+
+.img-container {
+  position: relative;
+}
+
+.img-container img {
+  width: 100%;
+  display: block;
+}
+
+.img-container .info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 150px; /* Adjust the size of the circle */
+  height: 150px;
+  background-color: rgba(0, 0, 0, 0.7); /* Opaque background */
+  border-radius: 50%;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.img-container:hover .info {
+  transform: translate(-50%, -50%) scale(1); /* Zoom in */
+  opacity: 1; /* Make it visible */
 }
 
 .box{
@@ -541,7 +561,60 @@ p.socials a{
 }
 
 
-  
+
+.cssbuttons-io-button {
+  background: #ffffff;
+  color: orange;
+  font-family: inherit;
+  padding: 0.35em;
+  padding-left: 1.2em;
+  font-size: 17px;
+  font-weight: 500;
+  border-radius:2em;
+  border:solid #5e0000;
+  /* border: none; */
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  box-shadow: inset 0 0 1.6em -0.6em #714da6;
+  overflow: hidden;
+  position: relative;
+  height: 2.8em;
+  padding-right: 3.3em;
+  cursor: pointer;
+}
+
+.cssbuttons-io-button .icon {
+  background: #5e0000;
+  margin-left: 1em;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.2em;
+  width: 2.2em;
+  border-radius: 9em;
+  right: 0.3em;
+  transition: all 0.3s;
+}
+
+.cssbuttons-io-button:hover .icon {
+  width: calc(100% - 0.6em);
+}
+
+.cssbuttons-io-button .icon svg {
+  width: 1.1em;
+  transition: transform 0.3s;
+  color: #fff;
+}
+
+.cssbuttons-io-button:hover .icon svg {
+  transform: translateX(0.1em);
+}
+
+.cssbuttons-io-button:active .icon {
+  transform: scale(0.95);
+}
 /****************/
 /* *6. WORK-AREA**/
 /****************/
@@ -708,6 +781,7 @@ form .btn:hover{
   /* width: 100%; */
   margin: 25px 0;
   border-radius: 50px;
+  border: solid rgb(77, 0, 0);
 }
 
 @media (max-width: 1000px){
@@ -963,7 +1037,7 @@ ul {
 /**********/
 /***FORM***/
 /**********/
-.register-section{
+/* .register-section{
     display: none;
 }
 *:before,
@@ -1003,8 +1077,8 @@ ul {
     );
     right: -30px;
     bottom: -80px;
-}
-.register-section form{
+} */
+/* .register-section form{
     height: 720px;
     width: 400px;
     background-color: rgba(255,255,255,0.13);
@@ -1099,5 +1173,5 @@ ul {
   border-radius:50px; 
   font-size:20px"
 }
-
+ */
 

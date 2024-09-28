@@ -14,7 +14,6 @@
 </head>
 
 <body>
-    <div class="scroll-bar"></div>
 
     <nav class="nav">
         <a href="#" class="txt" style="padding: 0 0 0 5px;">Block-Chain Academy</a>
@@ -30,6 +29,8 @@
                 </svg>
             </button>
         </ul>
+    <!-- <div class="scroll-bar"></div> -->
+
     </nav>
     <nav class="sidebar" id="sidebar">
         <ul class="sidebar-list">
@@ -51,7 +52,12 @@
             <h1>Block-Chain <span>Academy</span></h1>
             <h3>Investing in the next Innovators</h3>
             <!--<a href="#" class="btn">Learn More</a>-->
-            <button class="learnMoreBtn">Learn More</button>
+            <button class="learn-more learnMoreBtnCont">
+                <span class="circle" aria-hidden="true">
+                <span class="icon arrow"></span>
+                </span>
+                <span class="button-text">Learn More</span>
+              </button>
         </div>
     </section>
 
@@ -176,9 +182,23 @@
                 </div>
             </div>
         </div>
-        <button
-            style="padding:15px; background:rgb(46, 2, 2); color:white; border:solid white; border-radius:40px;" data-aos="zoom-out-up" data-aos-duration="1000">Start
-            Today</button>
+        <button class="cssbuttons-io-button">
+            Get started
+            <div class="icon">
+              <svg
+                height="24"
+                width="24"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M0 0h24v24H0z" fill="none"></path>
+                <path
+                  d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </div>
+          </button>
 
 
     </section>
