@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./Assets/css/style.css">
     <link rel="stylesheet" href="./Assets/css/nav-style.css">
     <link rel="stylesheet" href="./Assets/css/nav-main.css">
-    <link rel="stylesheet" href="./packages/node_modules/aos/dist/aos.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 </head>
 
@@ -469,11 +469,12 @@
     </footer>
     <!-- <script src="./packages/isotope/isotope.pkgd.min.js"></script> -->
     <!-- <script src="anime.js"></script> -->
-    <script src="./packages/node_modules/aos/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         //import Aos from 'packages/node_modules/aos/dist/aos.js';
         //import 'packages/node_modules/aos/dist/aos.js'
-        AOS.init();
+    
+            AOS.init();
 
         function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');
