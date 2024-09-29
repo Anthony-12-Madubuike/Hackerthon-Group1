@@ -59,7 +59,7 @@
             </button>
         </div>
     </section> -->
-    <div class="carousel-container content" id="content">
+    <div class="carousel-container">
         <div class="carousel-slide" id="carousel-slide">
             <!-- Slide 1 -->
             <div class="carousel-item active">
@@ -471,6 +471,8 @@
     <!-- <script src="anime.js"></script> -->
     <script src="./packages/node_modules/aos/dist/aos.js"></script>
     <script>
+        //import Aos from 'packages/node_modules/aos/dist/aos.js';
+        //import 'packages/node_modules/aos/dist/aos.js'
         AOS.init();
 
         function toggleSidebar() {
@@ -481,7 +483,7 @@
             sidebar.classList.toggle('open');
 
             // Shift content to accommodate the sidebar
-            content.classList.toggle('shifted');
+            //content.classList.toggle('shifted');
         }
 
         const slides = document.querySelectorAll('.carousel-item');
