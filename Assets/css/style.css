@@ -382,7 +382,7 @@ header nav li a{
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(70%); /* Darken image to make text stand out */
+  filter: brightness(50%); /* Darken image to make text stand out */
 }
 
 .carousel-content {
@@ -473,6 +473,7 @@ header nav li a{
 .indicators .active {
   background-color: #fff;
 }
+
 
 /* Fade animations */
 @keyframes fadeIn {

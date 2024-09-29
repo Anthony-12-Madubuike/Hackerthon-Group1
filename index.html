@@ -67,25 +67,54 @@
                 <div class="carousel-content">
                     <h1>Block-Chain Academy</h1>
                     <p>Investing in the next innovators</p>
-                    <a href="#">Learn More</a>
+                    <button class="learn-more learnMoreBtnCont">
+                        <span class="circle" aria-hidden="true">
+                            <span class="icon arrow"></span>
+                        </span>
+                        <span class="button-text">Learn More</span>
+                    </button>
                 </div>
             </div>
             <!-- Slide 2 -->
             <div class="carousel-item">
-                <img src="./resouces/images/hero3-min.jpg" alt="Slide 2">
+                <img src="./resouces/images/pexels-pavel-danilyuk-7108318.jpg" alt="Slide 2">
                 <div class="carousel-content">
                     <h1>Cutting Edge Technology</h1>
                     <p>Join us in the future of decentralized learning</p>
-                    <a href="#">Learn More</a>
+                    <button class="learn-more learnMoreBtnCont">
+                        <span class="circle" aria-hidden="true">
+                            <span class="icon arrow"></span>
+                        </span>
+                        <span class="button-text">Learn More</span>
+                    </button>
                 </div>
             </div>
             <!-- Slide 3 -->
             <div class="carousel-item">
-                <img src="./resouces/images/hero2.jpg" alt="Slide 3">
+                <img src="./resouces/images/lego1.jpg" alt="Slide 3">
                 <div class="carousel-content">
                     <h1>Innovative Education</h1>
                     <p>Empowering the next generation of tech leaders</p>
-                    <a href="#">Learn More</a>
+                    <button class="learn-more learnMoreBtnCont">
+                        <span class="circle" aria-hidden="true">
+                            <span class="icon arrow"></span>
+                        </span>
+                        <span class="button-text">Learn More</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="./resouces/images/pexels-edmond-dantes-7103103.jpg" alt="Slide 4">
+                <div class="carousel-content">
+                    <h1>Become a Tech Innovator</h1>
+                    <p>Explore a diverse curriculum of our courses, <br> equipping you with skills to excel in any tech field.</p>
+                    <button class="learn-more learnMoreBtnCont">
+                        <span class="circle" aria-hidden="true">
+                            <span class="icon arrow"></span>
+                        </span>
+                        <span class="button-text">Get started</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -97,6 +126,8 @@
         <span class="active" onclick="goToSlide(0)"></span>
         <span onclick="goToSlide(1)"></span>
         <span onclick="goToSlide(2)"></span>
+        <span onclick="goToSlide(3)"></span>
+
     </div>
 
 
@@ -473,8 +504,8 @@
     <script>
         //import Aos from 'packages/node_modules/aos/dist/aos.js';
         //import 'packages/node_modules/aos/dist/aos.js'
-    
-            AOS.init();
+
+        AOS.init();
 
         function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');
