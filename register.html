@@ -2,156 +2,618 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Ongoing Registeration...</title>
+
   <link rel="icon" href="resouces/chain2.png">
-  <link rel="stylesheet" href="./Assets/css/nav-style.css">
+
+  <!-- Main css -->
 </head>
+<style>
+  /* ========================
+=======WEBKIT CODE======== */
+  ::-webkit-scrollbar{
+    width: 0px;
+    height: 0px;
+
+  }
+
+  .signup-form::-webkit-scrollbar {
+    width: 2px;
+    height: 0px;
+
+  }
+
+  ::-webkit-scrollbar-track {
+    /* background:linear-gradient(to bottom, #002b81, purple);#002b81 */
+    background: rgb(52, 1, 1);
+
+  }
+
+  ::-webkit-scrollbar-thumb {
+    /* background-color: #54a9ff; */
+    background: linear-gradient(to bottom, rgb(255, 102, 0), orange);
+
+    width: 2px;
+
+
+  }
+
+  /* ================================
+=======END OF WEBKIT CODE======== */
+  /* @extend display-flex; */
+  display-flex,
+  .signup-content,
+  .form-row,
+  .form-radio,
+  .select-icon,
+  .select-icon i {
+    display: flex;
+    display: -webkit-flex;
+  }
+
+  /* @extend list-type-ulli; */
+  list-type-ulli {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  a:focus,
+  a:active {
+    text-decoration: none;
+    outline: none;
+    transition: all 300ms ease 0s;
+    -moz-transition: all 300ms ease 0s;
+    -webkit-transition: all 300ms ease 0s;
+    -o-transition: all 300ms ease 0s;
+    -ms-transition: all 300ms ease 0s;
+  }
+
+  input,
+  select,
+  textarea {
+    outline: none;
+    appearance: unset !important;
+    -moz-appearance: unset !important;
+    -webkit-appearance: unset !important;
+    -o-appearance: unset !important;
+    -ms-appearance: unset !important;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    appearance: none !important;
+    -moz-appearance: none !important;
+    -webkit-appearance: none !important;
+    -o-appearance: none !important;
+    -ms-appearance: none !important;
+    margin: 0;
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: none;
+    box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    -o-box-shadow: none !important;
+    -ms-box-shadow: none !important;
+  }
+
+  input[type=checkbox] {
+    appearance: checkbox !important;
+    -moz-appearance: checkbox !important;
+    -webkit-appearance: checkbox !important;
+    -o-appearance: checkbox !important;
+    -ms-appearance: checkbox !important;
+  }
+
+  input[type=radio] {
+    appearance: radio !important;
+    -moz-appearance: radio !important;
+    -webkit-appearance: radio !important;
+    -o-appearance: radio !important;
+    -ms-appearance: radio !important;
+  }
+
+  img {
+    max-width: 100%;
+    height: 100vh;
+  }
+
+  figure {
+    margin: 0;
+  }
+
+  input[type=number] {
+    -moz-appearance: textfield !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+  }
+
+  input:-webkit-autofill {
+    box-shadow: 0 0 0 30px transparent inset;
+    -moz-box-shadow: 0 0 0 30px transparent inset;
+    -webkit-box-shadow: 0 0 0 30px transparent inset;
+    -o-box-shadow: 0 0 0 30px transparent inset;
+    -ms-box-shadow: 0 0 0 30px transparent inset;
+  }
+
+  h2 {
+    line-height: 1.66;
+    margin: 0;
+    padding: 0;
+    font-weight: 700;
+    color: #222;
+    font-family: 'Montserrat';
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+  }
+
+  .clear {
+    clear: both;
+  }
+
+  body {
+    display: grid;
+    font-size: 13px;
+    line-height: 1.8;
+    color: #222;
+    font-weight: 400;
+    background: #282828;
+  }
+
+  .container {
+    position: relative;
+    margin: 0 auto;
+    background: #fff;
+  }
+
+  .signup-form {
+    height: 100vh;
+    width: 50vw;
+    overflow-y: scroll;
+  }
+
+  .signup-img {
+    margin-bottom: -7px;
+    width: 50%;
+    display: grid;
+    place-self: start;
+
+  }
+
+  .register-form {
+    padding: 50px 100px 50px 70px;
+  }
+
+  .form-row {
+    margin: 0 -15px;
+  }
+
+  .form-row .form-group {
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  .form-group {
+    margin-bottom: 23px;
+    position: relative;
+  }
+
+  input,
+  select {
+    display: block;
+    width: 100%;
+    border: 1px solid #ebebeb;
+    padding: 11px 20px;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 13px;
+  }
+
+  input:focus,
+  select:focus {
+    border: 1px solid #ff6801;
+  }
+
+  label {
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Montserrat';
+    margin-bottom: 2px;
+    display: block;
+  }
+
+  .form-radio {
+    margin-bottom: 18px;
+  }
+
+  .form-radio input {
+    width: auto;
+    display: inline-block;
+  }
+
+  .radio-label {
+    padding-right: 72px;
+  }
+
+  .form-radio-item {
+    position: relative;
+    margin-right: 45px;
+  }
+
+  .form-radio-item label {
+    font-weight: 500;
+    font-size: 13px;
+    padding-left: 25px;
+    position: relative;
+    z-index: 9;
+    display: block;
+    cursor: pointer;
+  }
+
+  .check {
+    display: inline-block;
+    position: absolute;
+    border: 1px solid #ebebeb;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -o-border-radius: 50%;
+    -ms-border-radius: 50%;
+    height: 13px;
+    width: 13px;
+    top: 4px;
+    left: 0px;
+    z-index: 5;
+    transition: border .25s linear;
+    -webkit-transition: border .25s linear;
+  }
+
+  .check:before {
+    position: absolute;
+    display: block;
+    content: '';
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -o-border-radius: 50%;
+    -ms-border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    margin: auto;
+    transition: background 0.25s linear;
+    -webkit-transition: background 0.25s linear;
+  }
+
+  input[type=radio] {
+    position: absolute;
+    visibility: hidden;
+  }
+
+  input[type=radio]:checked~.check {
+    border: 1px solid #ff6801;
+  }
+
+  input[type=radio]:checked~.check::before {
+    background: #ff6801;
+  }
+
+  .form-select {
+    position: relative;
+  }
+
+  select {
+    appearance: none !important;
+    -moz-appearance: none !important;
+    -webkit-appearance: none !important;
+    -o-appearance: none !important;
+    -ms-appearance: none !important;
+    position: relative;
+    background: 0 0;
+    z-index: 10;
+    cursor: pointer;
+  }
+
+  .select-icon {
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    -moz-justify-content: center;
+    -webkit-justify-content: center;
+    -o-justify-content: center;
+    -ms-justify-content: center;
+    align-items: center;
+    -moz-align-items: center;
+    -webkit-align-items: center;
+    -o-align-items: center;
+    -ms-align-items: center;
+  }
+
+  .select-icon i {
+    justify-content: center;
+    -moz-justify-content: center;
+    -webkit-justify-content: center;
+    -o-justify-content: center;
+    -ms-justify-content: center;
+    align-items: center;
+    -moz-align-items: center;
+    -webkit-align-items: center;
+    -o-align-items: center;
+    -ms-align-items: center;
+    width: 40px;
+    height: 20px;
+    font-size: 18px;
+    color: #999;
+  }
+
+  .form-submit {
+    text-align: right;
+    padding-top: 27px;
+  }
+
+  .submit {
+    width: 140px;
+    height: 40px;
+    display: inline-block;
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 13px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+  }
+
+  #reset {
+    background: #f8f8f8;
+    color: #999;
+    margin-right: 8px;
+  }
+
+  #reset:hover {
+    background: #ff6801;
+    color: #fff;
+  }
+
+  #submit {
+    background: #ff6801;
+    color: #fff;
+  }
+
+  #submit:hover {
+    background-color: #cd5300;
+  }
+
+  @media screen and (max-width: 992px) {
+    .container {
+      width: calc(100% - 250px);
+      max-width: 100%;
+    }
+
+    .signup-content {
+      flex-direction: column;
+      -moz-flex-direction: column;
+      -webkit-flex-direction: column;
+      -o-flex-direction: column;
+      -ms-flex-direction: column;
+    }
+
+    .signup-img,
+    .signup-form {
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .container {
+      width: calc(100% - 40px);
+    }
+    .register-form {
+      padding: 50px 40px 50px 40px;
+    }
+  }
+
+  @media screen and (max-width: 575px) {
+    .form-row {
+      flex-direction: column;
+      -moz-flex-direction: column;
+      -webkit-flex-direction: column;
+      -o-flex-direction: column;
+      -ms-flex-direction: column;
+      margin: 0px;
+    }
+
+    .form-row .form-group {
+      width: 100%;
+      padding: 0px;
+    }
+
+    .radio-label {
+      padding-right: 22px;
+    }
+
+    .form-radio-item {
+      margin-right: 25px;
+    }
+    img{
+      height: 50vh;
+      width: 100vw;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .form-radio {
+      flex-direction: column;
+      -moz-flex-direction: column;
+      -webkit-flex-direction: column;
+      -o-flex-direction: column;
+      -ms-flex-direction: column;
+    }
+
+    .submit {
+      width: 100%;
+    }
+
+    #reset {
+      margin-right: 0px;
+      margin-bottom: 10px;
+    }
+  }
+  @media (max-width:209px) {
+    img{
+     display: none;
+    }
+    .signup-form{
+      height: 300vh;
+     overflow-y:visible;
+    }
+  }
+</style>
 
 <body>
-  <div id="preloader" class="preloader"></div>
-  <ul class="teacherNav">
-    <li class="teacherNavLi"><a href="index.html" class="teacherNavLiA">Home</a></li>
-    <li class="teacherNavLi">
-      <a href="#" class="teacherNavLiA">Portals</a>
-    </li>
-    <li class="teacherNavLi">
-      <a href="#" class="teacherNavLiA">Library</a>
-    </li>
-    <li class="teacherNavLi">
-      <a href="#" class="teacherNavLiA">Register</a>
-    </li>
-    <!-- html code for teacher side bar icon -->
-    <button class="menu-btn" onclick="toggleSidebar()">
-      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
-        fill="#575757" class="bi bi-list" viewBox="0 0 16 16">
-        <path fill-rule="evenodd"
-          d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
-      </svg>
-    </button>
-  </ul>
 
-
-  <!-- html code for the teacher sidebar for mobile devices -->
-  <nav class="sidebar" id="sidebar">
-    <ul class="sidebar-list">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="#">News</a></li>
-      <li><a href="portal.html">Portals</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-    <button class="close-btn" onclick="toggleSidebar()"><img src="resouces/icons/left-black-arrow.png" alt="ll">
-    </button>
-  </nav>
-  <div class="first-contain content" id="content">
-
+  <div class="main">
     <div class="container">
-      <div class="title">Registration</div>
-      <form action="#" id="registerForm">
-        <div class="user-details">
-          <div class="input-box">
-            <label class="details" for="fullname">Full Name</label>
-            <input type="text" placeholder="Enter your name" name="fullname" id="fullname" required>
-          </div>
-
-          <div class="input-box">
-            <label class="details" for="telno">Phone Number</label>
-            <input type="text" id="telno" pattern="[0-9]*" inputmode="numeric"
-              oninput="this.value =this.value.replace(/[^0-9]/g, '')" placeholder="+234 08 389 3238" name="telno"
-              required>
-          </div>
-
-          <div class="input-box">
-            <label class="details" for="email">Email</label>
-            <input type="email" id="email" placeholder="example@gmail.com" name="email" required>
-          </div>
-
-          <div class="input-box">
-            <label class="details" for="fullname">Password</label>
-            <input type="password" placeholder="Enter your password" name="password" id="password" required>
-          </div>
-
-          <div class="input-box">
-            <label class="details" for="age">Age</label>
-            <input type="text" id="age" pattern="[0-9]*" inputmode="numeric"
-              oninput="this.value =this.value.replace(/[^0-9]/g, '')" placeholder="Enter your age" name="age" required>
-          </div>
-
-          <div class="input-box">
-            <label class="details" for="gender">Gender</label>
-            <input type="text" id="gender" placeholder="Enter your gender" name="gender" required>
-          </div>
-
-
-          <!-- <div class="input-box">
-            <label class="details" for="address">Address</label>
-            <input type="text" id="address" placeholder="Enter your address" name="address">
-          </div> -->
+      <div class="signup-content">
+        <div class="signup-img">
+          <img src="./resouces/images/carousel-1.jpg" alt="">
         </div>
+        <div class="signup-form">
+          <form class="register-form" id="register-form">
+            <h2>student registration form</h2>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fullname">FullName :</label>
+                <input type="text" name="fullname" id="fullname" required/>
+              </div>
+             </div>
+            <div class="form-group">
+              <label for="address">Address :</label>
+              <input type="text" name="address" id="address" required />
+            </div>
+            <div class="form-radio">
+              <label for="gender" class="radio-label">Gender :</label>
+              <div class="form-radio-item">
+                <input type="radio" name="gender" id="male" checked>
+                <label for="male">Male</label>
+                <span class="check"></span>
+              </div>
+              <div class="form-radio-item">
+                <input type="radio" name="gender" id="female">
+                <label for="female">Female</label>
+                <span class="check"></span>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="state">State :</label>
+                <div class="form-select">
+                  <select name="state" id="state">
+                    <option value=""></option>
+                    <option value="abia">Abia</option>
+                    <option value="abuja">Abuja</option>
+                    <option value="lagos">Lagos</option>
+                    <option value="kaduna">Kduna</option>
+                    <option value="kano">Kano</option>
 
-
-
-        <div class="button">
-          <button type="submit" style="color: orange; 
-            background:white; 
-            width:100%; 
-            height:100%;
-            border:none; 
-            border-radius:50px; 
-            font-size:20px; 
-            cursor:pointer">Register</button>
+                   </select>
+                  <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="city">City :</label>
+                <div class="form-select">
+                  <select name="city" id="city">
+                    <option value=""></option>
+                    <option value="losangeles">Los Angeles</option>
+                    <option value="washington">Washington</option>
+                  </select>
+                  <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="birth_date">DOB :</label>
+              <input type="text" name="birth_date" id="birth_date" placeholder="ddd/mmm/yyy">
+            </div>
+            <div class="form-group">
+              <label for="pincode">Pincode :</label>
+              <input type="text" name="pincode" id="pincode">
+            </div>
+            <div class="form-group">
+              <label for="course">Course :</label>
+              <div class="form-select">
+                <select name="course" id="course">
+                  <option value=""></option>
+                  <option value="computer">Computer Operator & Pragramming Assistant</option>
+                  <option value="desiger">Designer</option>
+                  <option value="marketing">Marketing</option>
+                  <option value="marketing">Cybersecurity</option>
+                  <option value="marketing">Data Analysis</option>
+                  <option value="marketing">Web3 Integration</option>
+                </select>
+                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" name="email" id="email" />
+            </div>
+            <div class="form-submit">
+              <input type="submit" value="Reset All" class="submit" name="reset" id="reset" />
+              <input type="submit" value="Submit Form" class="submit" name="submit" id="submit" />
+            </div>
+          </form>
         </div>
-      </form>
+      </div>
     </div>
+
   </div>
+<script>
+  document.getElementById('register-form').addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent the form from submitting
 
-  <!-- <script src="index.js"></script> -->
-  <script>
-
-    document.getElementById('registerForm').addEventListener('submit', function (event) {
-      event.preventDefault(); // Prevent the form from submitting
-
-      // Get form data
-      let fullName = document.getElementById('fullname').value;
-      let telno = document.getElementById('telno').value;
-      let email = document.getElementById('email').value;
-      let age = document.getElementById('age').value;
-      let address = document.getElementById('address').value;
-      // Generating of user Id
-      let adminNo = Math.floor(Math.random() * 10000)
+    // Get form data
+    let fullName = document.getElementById('fullname').value;
+  //  let telno = document.getElementById('telno').value;
+    //let email = document.getElementById('email').value;
+    //let age = document.getElementById('age').value;
+    //let address = document.getElementById('address').value;
+    // Generating of user Id
+    let adminNo = Math.floor(Math.random() * 10000)
 
 
 
-      // Save data to localStorage
-      localStorage.setItem('adminNo', adminNo)
-      localStorage.setItem('fullname', fullName);
-      localStorage.setItem('email', email);
-      localStorage.setItem('telno', telno);
-      localStorage.setItem('age', age);
-      //localStorage.setItem('address', address);
+    // Save data to localStorage
+    localStorage.setItem('adminNo', adminNo)
+    localStorage.setItem('fullname', fullName);
+    localStorage.setItem('email', email);
+   // localStorage.setItem('telno', telno);
+    //localStorage.setItem('age', age);
+    //localStorage.setItem('address', address);
 
 
 
-      // Redirect after 3 seconds
-      setTimeout(() => {
-        window.location.href = 'signup.html';
-      }, 9000); // 3 second delay
-      // Redirect to new page
+    // Redirect after 3 seconds
+    setTimeout(() => {
       window.location.href = 'signup.html';
-    });
-
-    function toggleSidebar() {
-      const sidebar = document.getElementById('sidebar');
-      const content = document.getElementById('content');
-
-      // Toggle sidebar visibility
-      sidebar.classList.toggle('open');
-
-      // Shift content to accommodate the sidebar
-      content.classList.toggle('shifted');
-    }
-  </script>
+    }, 9000); // 3 second delay
+    // Redirect to new page
+    window.location.href = 'register_success.html';
+  });
+</script>
 
 </body>
 

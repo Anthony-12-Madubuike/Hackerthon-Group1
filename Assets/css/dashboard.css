@@ -142,7 +142,7 @@ body {
     gap: 10px;
 }
 
-.profileTooltipLinks div{
+.profileTooltipLinks div {
     display: grid;
     grid-template-columns: 0.1fr 1fr;
     gap: 10px;
@@ -200,7 +200,7 @@ body {
 }
 
 /* =======END OF PROFILE TOOLTIP STYLE AREA======= */
-.speecCancelCont{
+.speecCancelCont {
     display: none;
     position: fixed;
     top: 5px;
@@ -212,22 +212,25 @@ body {
 
 
 }
-.speecCancelCont:hover{
+
+.speecCancelCont:hover {
     cursor: pointer;
-    background-color:rgb(19, 14, 89);
+    background-color: rgb(19, 14, 89);
 }
 
 @media (max-width:1000px) {
-    .speecCancelCont{
+    .speecCancelCont {
         left: 300px;
     }
 }
+
 @media (max-width:500px) {
-    .speecCancelCont{
+    .speecCancelCont {
         left: 100px;
         top: 30px;
     }
 }
+
 /* ==== HAMBURGER MENU STYLES==== */
 .hamburger {
     display: none;
@@ -746,6 +749,74 @@ body {
     background-color: #457b9d;
 }
 
+.modal {
+    position: absolute;
+    /* top: 0; */
+    left: 100px;
+    background-color: #2c3e50;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: slideDown 0.5s forwards ease-in-out;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    display: none;
+    grid-template-columns: 24px 1fr auto;
+    grid-template-rows: auto auto;
+    grid-gap: 10px;
+    align-items: center;
+    z-index: 1;
+}
+
+.modal svg {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+}
+
+.modal-content {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 16px;
+}
+
+.close {
+    grid-column: 3;
+    grid-row: 1;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px;
+    color: #ecf0f1;
+    justify-self: end;
+}
+
+.close:hover {
+    color: #e74c3c;
+    transition: color 0.3s ease;
+}
+
+.description {
+    grid-column: 2 / span 2;
+    grid-row: 2;
+    font-size: 12px;
+    color: #bdc3c7;
+}
+
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Responsive Design */
 @media (max-width:436px) {
     .profile-form {
@@ -759,11 +830,70 @@ body {
     }
 }
 
-@media screen and (max-width: 768px) {
+@media(max-width: 472px) {
     .profile-container {
         padding: 25px;
     }
+    .modal{
+        padding: 5px;
+        grid-gap: 10px;
+    grid-template-columns: 20px 1fr auto;
+    width: 200px;
+
+
+    }
+    .modal-content{
+        font-size: 12px;
+    }
+    .description{
+        font-size: 10px;
+    }
 }
+@media(max-width: 365px) {
+    .modal{
+        padding: 5px;
+        grid-gap: 10px;
+    grid-template-columns: 15px 1fr auto;
+    width: 200px;
+    left: 20px;
+
+
+    }
+    .modal-content{
+        font-size: 10px;
+    }
+    .description{
+        font-size: 7;
+    }
+}
+
+@media(max-width: 239px) {
+    
+    .modal{
+        padding: 1px;
+        grid-gap: 10px;
+    grid-template-columns: 15px 1fr auto;
+    width: 100px;
+    left: 20px;
+
+
+    }
+    .modal-content{
+        font-size: 8px;
+    }
+    .description{
+        font-size: 5;
+    }
+    .modal svg{
+        width: 12px;
+        height: 12px;
+    }
+}
+/* @media(max-width: 768px) {
+    .profile-container {
+        padding: 25px;
+    }
+} */
 
 /* Animation */
 @keyframes fadeIn {
@@ -1105,12 +1235,12 @@ body {
 .graphTxt h5 {
     color: #54a9ff;
     font-size: 22px;
-    font-family: sans-serif ;
+    font-family: sans-serif;
 }
 
 /* ================================
 =======END OF GRAPH STYLES SECTION======== */
-.leaderBoardCont{
+.leaderBoardCont {
     grid-area: footer;
     background-color: #040134;
     box-shadow: 0 4px 12px #0000001a;
@@ -1119,12 +1249,14 @@ body {
 
 
 }
-.leaderBoardCont p{
+
+.leaderBoardCont p {
     color: #fff;
     font-size: 20px;
     font-weight: bold;
     text-align: center;
 }
+
 .leaderBoard {
     grid-area: footer;
     height: 30vh;
@@ -1132,6 +1264,7 @@ body {
     font-family: 'Arial', sans-serif;
     border-radius: 1%;
 }
+
 /* Table Styles */
 table {
     width: 100%;
@@ -1339,7 +1472,8 @@ tr {
     .leaderBoard {
         height: 50vh;
     }
-    .guide{
+
+    .guide {
         display: none;
     }
 }
@@ -1366,6 +1500,7 @@ tr {
     .leaderBoard {
         overflow-x: scroll;
     }
+
     .notifyTooltipLinks {
         grid-template-columns: 1fr 0fr;
     }

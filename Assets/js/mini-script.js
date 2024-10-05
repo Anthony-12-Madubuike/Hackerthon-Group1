@@ -126,7 +126,7 @@ document.getElementById('profilePicture').addEventListener('change', function(ev
   document.getElementById("profileForm").addEventListener("submit", function (e) {
     e.preventDefault();
   
-    alert("Profile Updated Successfully!");
+    document.querySelector('.modal').style.display="grid"
   
     // Reset button animation
     const button = document.querySelector('.btn-save');
@@ -139,6 +139,12 @@ document.getElementById('profilePicture').addEventListener('change', function(ev
       button.classList.remove('saved');
       button.innerHTML = 'Save Changes';
     }, 3000);
+  });
+  document.querySelector('.close').addEventListener('click', function() {
+    const modal = document.querySelector('.modal');
+    modal.style.opacity = '0';
+    modal.style.transform = 'translateY(-30px)';
+    modal.style.display="none"
   });
   //================================================//
 // =======END OF PROFILE EDIT FUNCTION CODE========//

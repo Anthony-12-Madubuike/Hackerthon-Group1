@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Successful</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<style>
+    /* General body styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1c92d2 0%, #f2fcfe 100%);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+}
+
+.message-box {
+    background-color: #fff;
+    color: #333;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transform: scale(0.8);
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    max-width: 400px;
+    position: relative;
+}
+
+.message-box h2 {
+    margin: 10px 0 10px;
+    font-size: 28px;
+    color: #4CAF50;
+}
+
+.message-box p {
+    margin: 0;
+    font-size: 18px;
+    color: #555;
+}
+
+/* Hidden by default */
+.hidden {
+    visibility: hidden;
+}
+
+/* Visible state with smooth animation */
+.visible {
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible;
+    animation: bounce-in 0.6s ease-out;
+}
+
+@keyframes bounce-in {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Checkmark animation */
+.checkmark-circle {
+    width: 80px;
+    height: 80px;
+    background-color: #4CAF50;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px;
+    animation: pulse 1s infinite;
+}
+
+.checkmark {
+    
+    animation: draw-check 0.5s ease-in-out forwards;
+}
+
+@keyframes draw-check {
+    0% {
+        width: 0;
+        height: 0;
+    }
+    50% {
+        width: 20px;
+        height: 0;
+    }
+    100% {
+        width: 40px;
+        height: 20px;
+    }
+}
+
+/* Pulse animation for the circle */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+</style>
+<body>
+    <div class="container">
+        <div id="successMessage" class="message-box hidden">
+            <div class="checkmark-circle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#fff" class="bi bi-check" viewBox="0 0 16 16">
+                    <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                  </svg>
+            </div>
+            <h2>Success!</h2>
+            <p>Your registration was completed. Redirecting to your dashboard Sigin...</p>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function() {
+    const successMessage = document.getElementById('successMessage');
+    
+    // Simulate a delay, as if the registration was successful after some time
+    setTimeout(function() {
+        successMessage.classList.remove('hidden');
+        successMessage.classList.add('visible');
+
+        // Simulate redirect to dashboard after 5 seconds
+        setTimeout(function() {
+            window.location.href = 'signup.html';
+        }, 5000);
+    }, 1000); // Show message after 1 second
+};
+    </script>
+</body>
+</html>
