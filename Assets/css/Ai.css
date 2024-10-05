@@ -37,7 +37,7 @@
 
     .main-divCont .top-part {
         height: 100px;
-        background: #0f0f20;
+        background:  #000329;
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -102,13 +102,13 @@
         align-items: center;
     }
 
-    .left-part img {
+    /* .left-part img {
         height: 40px;
         width: 40px;
         background-color: #0f0f20;
         border-radius: 50%;
 
-    }
+    } */
 
     .chat-section .right-part {
         margin: -50px 0;
@@ -137,7 +137,7 @@
         position: absolute;
         bottom: 10px;
         width: 80px;
-        background: #000;
+        background: #000329;
         display: flex;
         justify-content: space-around;
         align-items: center;
