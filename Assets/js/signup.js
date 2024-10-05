@@ -135,5 +135,5 @@ document.querySelector('#registerForm').addEventListener('submit', function (eve
 });
 document.querySelector('.adminNoBtn').addEventListener('click', function(){
     let generatedAdminNum =  localStorage.getItem('adminNo');
-    alert(generatedAdminNum);
+    alert("Your Admin No is " + generatedAdminNum);
 })
