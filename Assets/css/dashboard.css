@@ -53,6 +53,7 @@ body {
         'sidepanel profile profile profiledit'
         'sidepanel graph graph  profiledit'
         'sidepanel footer footer footer';
+        grid-auto-rows: minmax(1px, auto);
     gap: 1rem;
     padding: 0 10px 0 0;
     background: linear-gradient(to bottom, #000000, #6e58fe);
