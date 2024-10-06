@@ -48,13 +48,13 @@ html {
 body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 0.3fr 1fr 1fr 1fr;
+    grid-template-rows:minmax(50px, auto) 1fr 1fr;
     grid-template-areas: 'sidepanel nav nav nav'
         'sidepanel profile profile profiledit'
         'sidepanel graph graph  profiledit'
         'sidepanel footer footer footer';
-    gap: 1rem;
-    padding: 0 10px 0 0;
+    gap: 0.5rem;
+    padding: 0;
     background: linear-gradient(to bottom, #000000, #6e58fe);
 }
 
