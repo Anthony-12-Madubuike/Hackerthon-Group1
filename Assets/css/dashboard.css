@@ -1456,15 +1456,18 @@ tr {
 
 /* ========================================= */
 /* =======END OF Tour section styles======= */
-@media (min-width:1200px){
+@media (min-width:1100px){
     body {
         /* align-items: start; */
         grid-template-rows: 1fr 1fr 1fr 1fr;
-        gap: 0px;
+        gap: 0.1rem;
 
     }
    .sidePanel{
     grid-template-rows: 0fr;
+   }
+   .profile{
+    align-items: center;
    }
 }
 
