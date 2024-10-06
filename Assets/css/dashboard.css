@@ -48,7 +48,7 @@ html {
 body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows:0fr 0fr 0fr 0fr;
+    grid-template-rows:1fr 0.5fr 0.5fr 1fr;
     grid-template-areas: 'sidepanel nav nav nav'
         'sidepanel profile profile profiledit'
         'sidepanel graph graph  profiledit'
@@ -1445,7 +1445,12 @@ tr {
 
 /* ========================================= */
 /* =======END OF Tour section styles======= */
+@media (min-width:1600px) {
+    body{
+    grid-template-rows:1fr 1fr 1fr 1fr;
 
+    }
+}
 @media (max-width:900px) {
     body {
         grid-template-columns: 0.3fr 1fr 1fr 1fr;
