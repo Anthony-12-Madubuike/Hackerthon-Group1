@@ -524,10 +524,8 @@ body {
 
 #webcam {
     width: 295px;
-    height: 300px;
-    position: absolute;
-    top: -38px;
-    /* border-radius: 15%; */
+    height: 100%;
+   
 }
 
 .status-message {
@@ -539,7 +537,6 @@ body {
 .user-info {
     margin-top: 20px;
     padding: 10px;
-    /* background-color: #f8f9fa; */
     border-radius: 5px;
 }
 
@@ -633,13 +630,13 @@ body {
 .upload-btn {
     background-color: #200359de;
     position: absolute;
-    top: 150px;
+    top: 170px;
     left: 250px;
     padding: 5px;
     border-radius: 50%;
     cursor: pointer;
     display: inline-block;
-    margin-top: 10px;
+    /* margin-top: 10px; */
     transition: background-color 0.3s ease;
 }
 
@@ -1457,25 +1454,29 @@ tr {
 
 /* ========================================= */
 /* =======END OF Tour section styles======= */
-@media (min-width:1100px){
+@media (min-width:1100px) {
     body {
         /* align-items: start; */
         grid-template-rows: 1fr 1fr 1fr 1fr;
         gap: 0.1rem;
 
     }
-   .sidePanel{
-    grid-template-rows: 0fr;
-   }
-   .sidePanellinks{
-    grid-template-rows: 0fr;
-   }
-   .sidePanelHead{
-    grid-template-rows: 0fr;
-   }
-   .pfHead{
-    align-items: center;
-   }
+
+    .sidePanel {
+        grid-template-rows: 0fr;
+    }
+
+    .sidePanellinks {
+        grid-template-rows: 0fr;
+    }
+
+    .sidePanelHead {
+        grid-template-rows: 0fr;
+    }
+
+    .pfHead {
+        align-items: center;
+    }
 }
 
 @media (max-width:900px) {
@@ -1537,6 +1538,7 @@ tr {
         display: none;
     }
 
+
 }
 
 @media (max-width:468px) {
@@ -1562,6 +1564,7 @@ tr {
     .search {
         display: none;
     }
+    
 }
 
 @media (max-width:209px) {

@@ -100,10 +100,13 @@ document.addEventListener("DOMContentLoaded", function() {
 document.querySelector('.pfTooltipDp').addEventListener('click', function(){
     document.querySelector('.profile-container').style.display='grid';
 });
+
 document.querySelector('.closePfEdit').addEventListener('click', function(){
     document.querySelector('.profile-container').style.display='none'
 });
-
+document.querySelector('.showProfile').addEventListener('click', function(){
+    document.querySelector('.profile-container').style.display='grid'
+});
 
 // file reader api to read the profile img from user device img picker
 document.getElementById('profilePicture').addEventListener('change', function(event) {
@@ -121,7 +124,6 @@ document.getElementById('profilePicture').addEventListener('change', function(ev
     }
   });
   
-
 //submit button to update changes
   document.getElementById("profileForm").addEventListener("submit", function (e) {
     e.preventDefault();
