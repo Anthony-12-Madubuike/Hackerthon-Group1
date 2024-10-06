@@ -48,7 +48,7 @@ html {
 body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows:1fr 0.5fr 0.5fr 1fr;
+    grid-template-rows: 1fr 0.5fr 0.5fr 1fr;
     grid-template-areas: 'sidepanel nav nav nav'
         'sidepanel profile profile profiledit'
         'sidepanel graph graph  profiledit'
@@ -819,11 +819,12 @@ body {
 
 /* Responsive Design */
 @media (max-width:989px) {
-.modal{
-    left: 150px;
-    right: 150px;
+    .modal {
+        left: 150px;
+        right: 150px;
+    }
 }
-}
+
 @media (max-width:436px) {
     .profile-form {
         grid-template-areas:
@@ -840,61 +841,71 @@ body {
     .profile-container {
         padding: 25px;
     }
-    .modal{
+
+    .modal {
         padding: 5px;
         grid-gap: 10px;
-    grid-template-columns: 20px 1fr auto;
-    width: 200px;
+        grid-template-columns: 20px 1fr auto;
+        width: 200px;
 
 
     }
-    .modal-content{
+
+    .modal-content {
         font-size: 12px;
     }
-    .description{
+
+    .description {
         font-size: 10px;
     }
 }
+
 @media(max-width: 365px) {
-    .modal{
+    .modal {
         padding: 5px;
         grid-gap: 10px;
-    grid-template-columns: 15px 1fr auto;
-    width: 200px;
-    left: 20px;
+        grid-template-columns: 15px 1fr auto;
+        width: 200px;
+        left: 20px;
 
 
     }
-    .modal-content{
+
+    .modal-content {
         font-size: 10px;
     }
-    .description{
+
+    .description {
         font-size: 7;
     }
 }
 
 @media(max-width: 239px) {
-    
-    .modal{
+
+    .modal {
         padding: 1px;
         grid-gap: 10px;
-    grid-template-columns: 15px 1fr auto;
-    width: 100px;
-    left: 20px;
+        grid-template-columns: 15px 1fr auto;
+        width: 100px;
+        left: 20px;
 
 
     }
-    .modal-content{
+
+    .modal-content {
         font-size: 8px;
     }
-    .description{
+
+    .description {
         font-size: 5;
     }
-    .modal svg{
+
+    .modal svg {
         width: 12px;
         height: 12px;
     }
 }
+
 /* @media(max-width: 768px) {
     .profile-container {
         padding: 25px;
@@ -1446,11 +1457,16 @@ tr {
 /* ========================================= */
 /* =======END OF Tour section styles======= */
 @media (min-width:1600px) {
-    body{
-    grid-template-rows:1fr 1fr 1fr 1fr;
+    body {
+        /* align-items: start; */
+        grid-template-rows: 1fr 1fr 1fr 1fr;
 
     }
+   .sidePanel{
+    grid-template-rows: 0fr;
+   }
 }
+
 @media (max-width:900px) {
     body {
         grid-template-columns: 0.3fr 1fr 1fr 1fr;
