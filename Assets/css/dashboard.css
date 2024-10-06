@@ -1466,7 +1466,13 @@ tr {
    .sidePanel{
     grid-template-rows: 0fr;
    }
-   .profile{
+   .sidePanellinks{
+    grid-template-rows: 0fr;
+   }
+   .sidePanelHead{
+    grid-template-rows: 0fr;
+   }
+   .pfHead{
     align-items: center;
    }
 }
