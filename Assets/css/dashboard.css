@@ -1456,7 +1456,7 @@ tr {
 
 /* ========================================= */
 /* =======END OF Tour section styles======= */
-@media (min-width:1600px) {
+@media (min-width:1200px){
     body {
         /* align-items: start; */
         grid-template-rows: 1fr 1fr 1fr 1fr;
