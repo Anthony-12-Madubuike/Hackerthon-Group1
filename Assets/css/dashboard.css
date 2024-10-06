@@ -48,7 +48,7 @@ html {
 body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows:minmax(50px, auto) 1fr 1fr;
+    grid-template-rows:0fr 0fr 0fr 0fr;
     grid-template-areas: 'sidepanel nav nav nav'
         'sidepanel profile profile profiledit'
         'sidepanel graph graph  profiledit'

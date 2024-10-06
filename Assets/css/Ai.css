@@ -1,5 +1,5 @@
 .aiIconCont{
-    position: absolute;
+    position: fixed;
     bottom: 10px;
     display: flex;
     right: 10px;

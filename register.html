@@ -188,6 +188,7 @@
 
   }
 
+
   .register-form {
     padding: 50px 100px 50px 70px;
   }
@@ -414,6 +415,10 @@
     .signup-form {
       width: 100%;
     }
+    img{
+      height: 50vh;
+
+    }
   }
 
   @media screen and (max-width: 768px) {
@@ -422,6 +427,10 @@
     }
     .register-form {
       padding: 50px 40px 50px 40px;
+    }
+    img{
+      height: 50vh;
+
     }
   }
 
@@ -525,7 +534,7 @@
                     <option value="abia">Abia</option>
                     <option value="abuja">Abuja</option>
                     <option value="lagos">Lagos</option>
-                    <option value="kaduna">Kduna</option>
+                    <option value="kaduna">Kaduna</option>
                     <option value="kano">Kano</option>
 
                    </select>
@@ -534,14 +543,7 @@
               </div>
               <div class="form-group">
                 <label for="city">City :</label>
-                <div class="form-select">
-                  <select name="city" id="city">
-                    <option value=""></option>
-                    <option value="losangeles">Los Angeles</option>
-                    <option value="washington">Washington</option>
-                  </select>
-                  <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
-                </div>
+                  <input type="text" name="city" id="city">
               </div>
             </div>
             <div class="form-group">
@@ -557,8 +559,8 @@
               <div class="form-select">
                 <select name="course" id="course">
                   <option value=""></option>
-                  <option value="computer">Computer Operator & Pragramming Assistant</option>
-                  <option value="desiger">Designer</option>
+                  <option value="computer">Web Development</option>
+                  <option value="desiger">UX/UI Designer</option>
                   <option value="marketing">Marketing</option>
                   <option value="marketing">Cybersecurity</option>
                   <option value="marketing">Data Analysis</option>
