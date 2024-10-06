@@ -752,7 +752,7 @@ body {
 .modal {
     position: absolute;
     /* top: 0; */
-    left: 100px;
+    left: 500px;
     background-color: #2c3e50;
     color: white;
     padding: 15px;
@@ -818,6 +818,12 @@ body {
 }
 
 /* Responsive Design */
+@media (max-width:989px) {
+.modal{
+    left: 150px;
+    right: 150px;
+}
+}
 @media (max-width:436px) {
     .profile-form {
         grid-template-areas:
@@ -1019,6 +1025,7 @@ body {
     grid-area: sidepanel;
     overflow-y: scroll;
     overflow-x: hidden;
+    height: auto;
 
 }
 
@@ -1090,6 +1097,7 @@ body {
     display: grid;
     border-radius: 20px;
     grid-template-columns: 1fr 1fr;
+    height: auto;
     /* padding: 25px; */
     /* justify-content: center; */
     /* align-items: center; */
@@ -1139,6 +1147,7 @@ body {
     grid-template-rows: 0.5fr;
     grid-area: profiledit;
     gap: 10px;
+    height: auto;
 }
 
 .analysisHead {
@@ -1202,6 +1211,7 @@ body {
     grid-area: graph;
     border-radius: 10px;
     box-shadow: 0 5px 6px #000000, 0 1px 6 3px #0000000d;
+    height: auto;
 }
 
 .card2 {
@@ -1246,6 +1256,7 @@ body {
     box-shadow: 0 4px 12px #0000001a;
     padding: 10px;
     border-radius: 5px;
+    height: auto;
 
 
 }

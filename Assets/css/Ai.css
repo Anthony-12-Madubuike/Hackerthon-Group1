@@ -17,6 +17,7 @@
         align-items: center;
         min-height: 100vh;
         z-index: 999;
+        display: none;
     }
     @media (max-width:310px) {
         .main-div{
@@ -24,7 +25,6 @@
             left: 0;
         }
     }
-
     .main-divCont {
         height: 550px;
         width: 300px;
@@ -63,18 +63,24 @@
 
     .agent-text h3 {
         font-size: 15px;
-        color: #515168;
+        color: #9c9cad;
 
     }
 
     .agent-text p {
         font-size: 11px;
-        color: #515168;
+        color: #929293;
 
     }
 
+    .closeAi:hover{
+        cursor: pointer;
+        fill: red;
+        transition: 1s;
+    }
+
     .agent-text span {
-        color: #292938;
+        color: #464653;
     }
 
     .chat-section {
