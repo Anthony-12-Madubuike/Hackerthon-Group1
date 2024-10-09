@@ -10,7 +10,7 @@ Hackathon: KBM Web 3 EXPO
 
 Duration: 3 Month
 
-Team Members: Anthony Madubuike, Majesty Joseph, Joseph Otokpa, Ochowechi Joshua
+Team Members: Anthony Madubuike, Majesty Joseph, Joseph Otokpa, Umaru Angel, Ochowechi Joshua
 
 Goal: To Identify fraudulent results and Students in a school.
 
@@ -28,7 +28,7 @@ Technologies Used
 
 Frontend: HTML5, CSS3, JavaScript(bootsrap, Aos, chart.js e.t.c..).
 
-Other Tools: Git, any other libraries.
+Other Tools: Git.
 
 
 Getting Started
